@@ -1,0 +1,719 @@
+﻿/*SMALL SCREEN*/
+
+
+.transferPage {
+    margin-left: -32px !important;
+    width: 103% !important;
+}
+
+
+
+
+.containerTracking {
+    margin-left: 242px;
+}
+
+
+containerTransfer {
+    margin-left: 69px;
+}
+
+.containerAdmin {
+    padding-right: 15px;
+    /*padding-left: 0px;*/
+    margin-right: auto;
+    margin-left: -253px;
+    width: 129%;
+}
+
+.headTitle {
+    padding-bottom: 42px !important;
+}
+
+.medTitle {
+    margin-left: 40% !important;
+}
+
+.verticalTracking {
+    border-left: 2px solid #C8C9CA;
+    height: 573px;
+    margin-top: -25px;
+    position: absolute;
+    left: 33%;
+    margin-right: 15px;
+    width: 5px;
+}
+
+.verticalTracking2 {
+    border-left: 2px solid #C8C9CA;
+    height: 573px;
+    margin-top: -25px;
+    position: absolute;
+    left: 65.5%;
+    margin-right: 15px;
+    width: 5px;
+}
+
+.verticalTransfer {
+    border-left: 2px solid #C8C9CA;
+    height: 481px;
+    margin-top: -25px;
+    position: absolute;
+    left: 47%;
+    margin-right: 15px;
+    width: 5px;
+}
+
+
+.lineTracking {
+    margin-left: 11px;
+    width: 312px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.lineTransfer {
+    margin-left: 75px;
+    width: 406px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+/*.verticalAdmin {
+    border-left: 2px solid #C8C9CA;
+    height: 552px;
+    margin-top: -25px;
+    position: absolute;
+    left: 35%;
+    margin-right: 15px;
+}
+
+.verticalAdmin2 {
+    border-left: 2px solid #C8C9CA;
+    height: 552px;
+    margin-top: -25px;
+    position: absolute;
+    left: 61%;
+    margin-right: 15px;
+}*/
+.container {
+    margin-top: 20px !important;
+    margin-bottom: 47px;
+}
+
+label {
+    font-size: 14px !important;
+    /*text-align: right;*/
+}
+
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-right: 4px;
+    border: 1px solid #C8C9CA;
+    border-radius: 5px;
+}
+
+/*.control-label{
+    text-align: right !important;
+}*/
+
+#commentsTracking {
+    float: right;
+    width: 373px;
+}
+
+#commentsTransfer {
+    float: right;
+    width: 532px;
+    margin-top: 15px;
+}
+
+
+
+.triageLvl {
+    margin-left: 123px !important;
+    margin-bottom: 20px;
+}
+
+.sBarGroup {
+    margin-bottom: 20px;
+}
+
+
+.group10Space {
+    margin-bottom: 20px;
+}
+
+#comments {
+    margin-right: 21px;
+}
+
+
+.dispArrive {
+    margin-bottom: 16px;
+}
+
+.dispType {
+    margin-bottom: 11px;
+    margin-left: 59px !important;
+}
+
+
+.MSEStart {
+    margin-left: -6px !important;
+    margin-bottom: 17px;
+}
+
+.MSEEnd {
+    margin-bottom: 17px;
+}
+
+.certStatus {
+    margin-top: 22px;
+}
+
+.lblDateTime {
+    text-align: left;
+    margin-left: 13px;
+}
+
+.SpaceData {
+    margin-bottom: 22px;
+}
+
+
+#departureTime {
+    width: 3px;
+}
+
+#actionsection {
+    margin-left: 74px;
+}
+
+.medTitle {
+    color: white;
+    font-size: 40px;
+    display: block;
+    margin-left: 852px;
+    margin-top: 13px;
+    padding-bottom: 12px;
+}
+
+
+.table {
+    background-color: white;
+    /*margin-left: -15px;*/
+    margin-left: 0px;
+    width: 402px;
+    max-width: 402px;
+}
+
+.userLinks1 {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    float: left;
+}
+
+
+.userLinks2 {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    float: right;
+}
+
+/*Home, Transfers, Cert, Accounts & Reports buttons*/
+.userBtn {
+    background-color: #43444D;
+    color: white;
+    border: none;
+}
+
+
+.patientTabs {
+    background-color: white;
+    margin-left: 23px;
+    margin-right: 23px;
+}
+
+
+
+.newAccountTitle {
+    background-color: #43444D;
+    color: white;
+    padding: 16px;
+    width: 402px;
+    margin-left: -15px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+
+#AddNewAccount {
+    width: 500px;
+    background-color: white;
+    padding: 48px 100px 40px 40px;
+}
+
+hr {
+    width: 74%;
+    margin-left: 81px;
+    margin-bottom: 45px;
+}
+
+.hospital {
+    width: 74%;
+    margin-left: 87px;
+    margin-bottom: 19px;
+}
+
+.hospBtns {
+    margin-left: 83px;
+    margin-top: 33px;
+}
+
+.hospTitle {
+    margin-left: 39%;
+    font-weight: normal;
+    font-size: 30px;
+    width: 100%;
+}
+
+.userTitle {
+    margin-left: 35%;
+    font-weight: normal;
+    font-size: 30px;
+    width: 100%;
+}
+
+.userTitlePhone {
+    margin-left: 20%;
+    font-weight: normal;
+    font-size: 30px;
+    width: 100%;
+}
+
+.userTitleExtension {
+    margin-left: 18%;
+    font-weight: normal;
+    font-size: 30px;
+    width: 100%;
+}
+
+.submitNewAcct {
+    background-color: #43444D;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 85px;
+    margin-bottom: 24px;
+    margin-top: 20px;
+}
+
+.CancelNewAcct {
+    background-color: white;
+    border: 1px solid #43444D;
+    color: #43444D;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 14px;
+    margin-bottom: 24px;
+    margin-top: 20px;
+}
+
+.acctBtns {
+    margin-top: 33px;
+}
+
+.addAcct {
+    margin-left: 65% !important;
+    padding-top: 30px;
+    background-color: white;
+    width: 700px;
+}
+
+
+.editCertBtn {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+}
+
+
+
+/*TABLES*/
+.row {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: center;
+    padding: 16px;
+}
+
+
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+#waitingTable {
+    margin-bottom: 54px;
+    margin-top: 0px;
+}
+
+.transferBtnsT {
+    margin-left: 305px;
+}
+
+.trackingBtns {
+    margin-left: 152px;
+}
+
+.submitBtn {
+    background-color: #43444D !important;
+    color: white;
+    width: 115px;
+}
+
+.cancelBtn {
+    width: 115px;
+    margin-top: 22px;
+}
+
+    .cancelBtn:hover {
+        color: black;
+        background-color: white;
+    }
+
+
+.addPatientBtn {
+    width: 115px;
+    margin-top: 22px;
+    margin-left: 20px;
+}
+
+    .addPatientBtn:hover {
+        color: black;
+        background-color: white;
+    }
+
+
+.submitTransfer {
+    background-color: #43444D;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 85px;
+    margin-bottom: 24px;
+    margin-top: 20px;
+}
+
+
+.cancelTransfer {
+    background-color: white;
+    border: 1px solid #43444D;
+    color: #43444D;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 14px;
+    margin-bottom: 24px;
+    margin-top: 20px;
+}
+
+    .cancelTransfer:hover {
+        color: #43444D;
+        background-color: white;
+    }
+
+
+/*Patient image*/
+.thumb-image {
+    float: left;
+    width: 500px;
+    position: relative;
+    padding: 5px;
+}
+
+
+/*Transfers page table space*/
+.tableSpace {
+    background-color: #EEEFE9;
+    padding: 5px !important;
+    border: none !important;
+}
+
+/*.transferSearch {
+    font-size: 20px;
+    float: right;
+    margin-right: 13px;
+    margin-top: 9px;
+}*/
+
+
+#AddNewHospital {
+    width: 595px;
+}
+
+#AddNewHospitalPhone {
+    width: 595px;
+    margin-left: 51px;
+}
+
+#AddHospitalPhoneExtension {
+    width: 595px;
+}
+
+.table thead th {
+    vertical-align: middle;
+}
+
+
+/*Search bar*/
+.transferSearch {
+    overflow: hidden;
+    background-color: #43444D;
+    width: 93%;
+    margin-left: 74px;
+}
+
+    .transferSearch a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 30px;
+    }
+
+    .transferSearch .search-container {
+        float: right;
+        margin-left: 40px;
+    }
+
+    .transferSearch input[type=text] {
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+        margin-top: 15px;
+        margin-right: 10px;
+        float: right;
+        width: 368px;
+    }
+
+#userInput {
+    float: right;
+}
+
+
+.transferSearch .search-container button:hover {
+    background: #ccc;
+}
+
+.transferData {
+    padding-top: 0px !important;
+    padding-left: 491px;
+}
+
+.transferTable {
+    padding-top: 0px !important;
+    /*padding-left: 507px;*/
+}
+
+.transferContainer {
+    padding-top: 20px;
+    margin-left: 90px;
+}
+
+.tableTransfer {
+    background-color: white;
+    /*margin-left: -15px;*/
+    margin-left: 0px;
+    width: 402px;
+    max-width: 402px;
+}
+
+.fullName {
+    border: none;
+    font-size: 27px;
+    margin-left: 43%;
+    width: 56%;
+    margin-bottom: 33px
+}
+
+.fullNameInfo {
+    border: none;
+    font-size: 27px;
+    margin-left: 28%;
+    width: 56%;
+    margin-bottom: 49px
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: white;
+}
+
+.infobar {
+    margin-left: -11px;
+    margin-bottom: 16px;
+    margin-top: 39px !important;
+}
+
+
+/*Reason DropDown*/
+.bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:active {
+    color: black !important;
+    background-color: white;
+    border: 1px solid #ced4da;
+    /*background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e);*/
+    /* background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;*/
+}
+
+.btn-check:focus + .btn-light, .btn-light:focus, .btn-light:hover {
+    background-color: white !important;
+}
+
+.btn-light {
+    color: #000;
+    background-color: white;
+    border: 1px solid #ced4da;
+}
+
+.bootstrap-select {
+    /*width: 193px;*/
+    width: 100%;
+}
+
+.reasonDrop {
+    /*margin-left: 78px !important;*/
+    width: 217px !important;
+}
+
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+
+.trackingPartialBtn {
+    float: right;
+    margin: 35px 68px -51px 0px;
+}
+
+.transferPartialBtn {
+    float: right;
+    margin: 35px 131px -51px 0px;
+}
+
+/*Transfer tab link colors*/
+.nav-link {
+    color: #B2C4CF !important;
+}
+
+    .nav-link:focus, .nav-link:hover {
+        color: #B2C4CF !important;
+    }
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #495057 !important;
+}
+
+.patientPartial {
+}
+
+/*.patientTable tr {
+    background-color: rgba(255, 0, 0, 0.3) !important;
+}*/
+
+.dropdowns {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    -moz-padding-start: calc(0.75rem - 3px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.hide {
+    display: none;
+}
+
+#guardianCheck {
+    float: none;
+}
+/*
+.bootstrap-select:not(.input-group-btn), .bootstrap-select[class*="col-"]{
+    width:100% !important;
+}*/
+
+
+.Track_Reason .select2-container--default .select2-selection--multiple {
+    width: 192px;
+}
+
+.select2-container--default .select2-selection--multiple {
+    width: 261px;
+}
+
+/*Create New Hospital page - State select box*/
+/*.hospName .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 231px !important;
+}*/
+.hospName {
+    width: 231px !important;
+}

@@ -1,0 +1,1211 @@
+﻿body {
+    margin-bottom: 60px;
+    background-color: #EEEFE9;
+    /*padding-left: 30px;*/
+}
+
+p {
+    margin-bottom: 0rem;
+}
+
+
+.patientCount {
+    text-decoration: none;
+    color: #6B818C;
+    font-size: 30px;
+}
+
+    .patientCount:hover {
+        text-decoration: none;
+        color: #6B818C;
+        /*font-size: 35px;*/
+    }
+
+    .patientCount:focus {
+        text-decoration: none;
+        outline: none;
+    }
+
+    .patientCount:active {
+        text-decoration: none !important;
+        outline: none !important;
+    }
+
+
+    .container {
+    padding-right: 15px;
+    /*padding-left: 0px;*/
+    margin-right: auto;
+    margin-left: 0px;
+    width: 100%;
+}
+
+.containerAdmin {
+    padding-right: 15px;
+    /*padding-left: 0px;*/
+    margin-right: auto;
+    margin-left: -253px;
+    width: 141%;
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+html {
+    font-size: 14px;
+}
+
+
+/**********Hamburger Drop Down*************/
+/*.dropbtn {
+    background-color: #6B818C;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-left: -14px;
+}
+
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: #6B818C;
+    }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #43444D;
+    min-width: 16px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-left: -15px;
+}
+
+    .dropdown-content a {
+        color: #EEEFE9;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+.dropdown a:hover {
+    background-color: #ddd;
+    color: #43444D;
+    text-decoration: none;
+}
+
+.show {
+    display: block;
+}
+
+.menu {
+    width: 35px;
+    height: 5px;
+    background-color: #E1DADA;
+    margin: 6px 0;
+}*/
+
+
+/*******MedTimers Title***********/
+.mainTitle {
+    background-color: #43444D;
+    color: #E1DADA;
+    font-size: 30px;
+    display: block;
+    margin-left: 848px;
+    margin-top: -55px;
+    margin-bottom: -51px;
+}
+
+
+.headTitle {
+    padding-bottom: 45px;
+}
+/***************************************/
+
+
+
+.userName {
+    color: #E1DADA;
+    font-size: 20px;
+    margin-right: 70px;
+    float: right;
+    margin-top: -50px;
+}
+
+
+/*******Lobby, Transfer, Cert Numbers********/
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background-color: #F4F5F2;
+    color: #6B818C;
+    background-position: 9px 0px;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    line-height: 18px;
+    overflow: hidden;
+    padding: 4px 6px;
+    /*width: 1750px;*/
+    margin-bottom: 3%;
+    font-size: 30px;
+    vertical-align: middle;
+    /*margin-left: 61px;*/
+    text-align: center;
+    height: 128px;
+}
+
+
+.grid-child span {
+    display: block;
+    padding: 10px;
+}
+
+
+
+/*****************************************/
+
+
+
+
+
+
+
+/***********Page Title: Lobby**********/
+.pageTitle {
+    color: white;
+    background-color: #43444D;
+    height: 70px;
+    width: 1750px;
+    font-size: 35px;
+    padding-left: 16px;
+    padding-top: 7px;
+    /*margin-bottom: 7px;*/
+    margin-top: -14px;
+    position: relative;
+    display: inline-block;
+}
+
+/***************************************/
+
+
+/***********Entry Number DropDown******************/
+#PatientTable_length {
+    color: white;
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    margin-top: -50px;
+    margin-left: 160px;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    background-color: #43444D;
+    width: 60px;
+}
+
+/****************************************************/
+
+/**********Search bar******************/
+#PatientTable_filter {
+    color: white;
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    /*background-color: #43444D;*/
+    margin-right: 80px;
+    margin-top: -50px;
+}
+
+input[type=search]{
+    color:white;
+    margin-top: 8px;
+}
+/*************************************/
+/********Search bar & Entry Number Dropdown***********/
+label {
+    font-weight: normal;
+    font-size: 18px;
+}
+/*****************************************/
+
+
+
+
+
+/********Excel Download Btn***************/
+.ExcelBtn {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    float: right;
+    margin-top: 12px;
+    margin-right: 18px;
+}
+
+/**************************************/
+
+
+
+
+/******DataTable height********/
+.dataTables_scrollBody {
+    height: 500px;
+
+}
+/*****************************/
+
+
+/******DataTable Row*******/
+.row.content {
+    height: 1500px;
+    vertical-align: middle;
+    padding: 8px 17px 8px 17px;
+}
+
+/*Table row margin*/
+.row {
+    margin-left: 0px;
+}
+/**************************/
+
+
+
+
+/**************DataTable*************/
+table.dataTable tbody td {
+    text-align: center;
+    padding: 15px 15px 15px 5px;
+}
+
+th {
+    font-weight: normal;
+    text-align: center;
+    width: 700px;
+    background-color: #B2C4CF;
+    color: white;
+    text-align: center;
+    top: 0;
+    position: sticky;
+    z-index: 1;
+}
+
+th, td {
+    white-space: nowrap;
+    margin: 0;
+}
+
+div.dataTables_wrapper {
+    width: 1750px;
+    margin: 0 auto;
+}
+
+border
+table.dataTable.no-footer{
+    border-bottom: none;
+}
+
+Line breaks for dateTime
+.line-breaks{
+    white-space:pre-line;
+}
+/******************************************/
+
+
+
+
+/****************************************/
+/******Add New Patient Button**************/
+/*.add-row {
+    padding: 0px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.428571429;
+    border-radius: 20px;
+    background-color: #6B818C;
+    color: white;
+    border: none;
+    outline: none;
+    transition: all .4s ease-in-out;
+}
+
+    .add-row:hover {
+        background-color: #6B818C;
+        color: white;
+    }
+
+.add-row2 {
+    padding: 0px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.428571429;
+    border-radius: 20px;
+    background-color: #EE3838;
+    color: white;
+    border: none;
+    outline: none;
+    transition: all .4s ease-in-out;
+    -webkit-transform: rotate(45deg);
+}
+
+.fa-plus:before {
+    padding-left: 10px;
+}
+
+
+.addRow {
+    float: left;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+.addUL {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/*Behind button*/
+.addBtn {
+    text-align: center;
+    background: #EEEFE9;
+    height: 40px;
+    width: 40px;
+    margin-bottom: 5px;
+}
+
+    /*Button*/
+    .addBtn .addLI {
+        float: left;
+        font-size: 16px;
+        height: 35px;
+        line-height: 40px;
+        width: 35px;
+        border-radius: 20px;
+    }
+
+.add {
+    display: block;
+    font-weight: bold;
+    height: 40px;
+    transition: all .4s ease-in-out;
+}
+
+.plus {
+    background: #6B818C;
+    transition: all .4s ease-in-out;
+    color: white;
+}
+
+.open {
+    background: #f67;
+}
+
+.rotate {
+    -webkit-transform: rotate(45deg);
+}
+
+
+
+
+
+
+/*Multi select drop down for Reason*/
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    /*-khtml-user-select: none;*/
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.multiselect {
+    width: 400px;
+    font-size: 15px;
+    padding-bottom: 4px;
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+    transition: 0.2s;
+    outline: none;
+    height: 29px;
+    background-color: white;
+}
+
+    .multiselect:hover {
+        /*border: 1px solid black;*/
+    }
+
+    .multiselect.active {
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-bottom: 1px solid transparent;
+    }
+
+    .multiselect > .title {
+        cursor: pointer;
+        height: 26px;
+        padding: 6px;
+    }
+
+        .multiselect > .title > .text {
+            max-width: 430px;
+            max-height: 25px;
+            display: block;
+            float: left;
+            overflow: hidden;
+            line-height: 1em;
+        }
+
+        .multiselect > .title > .expand-icon,
+        .multiselect > .title > .close-icon {
+            float: right;
+            border-radius: 50%;
+            padding: 0 4px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            font-weight: 700;
+            transition: 0.2s;
+            display: none;
+            height: 24px;
+            width: 24px;
+        }
+
+    .multiselect.selection > .title > .expand-icon {
+        display: none;
+    }
+
+    .multiselect > .title > .expand-icon,
+    .multiselect.selection > .title > .close-icon {
+        display: block;
+    }
+
+    .multiselect > .title > .close-icon:hover {
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        background: rgb(203, 32, 32);
+        color: #fff;
+    }
+
+    .multiselect > .container {
+        max-height: 200px;
+        overflow: auto;
+        margin-top: 0px;
+        margin-left: -1px;
+        width: 400px;
+        transition: 0.2s;
+        position: absolute;
+        z-index: 99;
+        background: #fff;
+        /*border: 1px solid black;*/
+        /*border-top: 1px solid rgba(0, 0, 0, 0.1);*/
+    }
+
+    .multiselect.active > .container {
+        border: 1px solid #cccccc;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-top: 0;
+    }
+
+    .multiselect:hover > .container {
+        /*border-top-color: black;*/
+    }
+
+    .multiselect.active:hover > .container {
+        border-color: #cccccc;
+    }
+
+    .multiselect > .container > option {
+        display: none;
+        padding: 5px;
+        cursor: pointer;
+        transition: 0.2s;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+    }
+
+        .multiselect > .container > option.selected {
+            background: #B2C4CF;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            color: #fff;
+        }
+
+        .multiselect > .container > option:hover {
+            background: rgba(0, 0, 0, 0.1);
+            color: #000;
+        }
+
+    .multiselect.active > .container > option {
+        display: block;
+    }
+
+
+.ReasonContainer {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+}
+
+
+
+/*******************Triage Buttons**************************/
+.triageBtn {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    -webkit-transition: width 1s;
+    transition: width 1s;
+    white-space: nowrap;
+    border-radius: 50px;
+    position: relative;
+    top: -3px;
+    border: white;
+    padding: 0px;
+}
+
+    .triageBtn#green {
+        padding: 0px;
+        width: 80px;
+        -webkit-transition: width 1s;
+        transition: width 1s;
+        content: 'Low';
+    }
+
+    .triageBtn#yellow {
+        padding: 0px;
+        width: 80px;
+        -webkit-transition: width 1s;
+        transition: width 1s;
+        content: 'Medium';
+    }
+
+    .triageBtn#red {
+        content: 'High';
+        padding: 0px;
+        width: 80px;
+        -webkit-transition: width 1s;
+        transition: width 1s;
+    }
+
+.hidden {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+}
+
+.TriageCloseLowHigh {
+    margin-top: -28px;
+    opacity: 0.3;
+    margin-left: 60px;
+}
+
+.TriageCloseMedium {
+    margin-top: -28px;
+    opacity: 0.3;
+    margin-left: 66px;
+}
+
+.close {
+    float: left;
+}
+
+
+/*
+.closeTriage {
+    padding: 4px 8px;
+    border: 1px solid #000;
+    background-color: #fff;
+    cursor: pointer;
+    position: absolute;
+}
+
+    .closeTriage:before {
+        content: '\00d7';
+        color: black;
+        font-size: 1em;*/
+}
+
+
+
+.btn .btn-text {
+    max-width: 0;
+    display: inline-block;
+    -webkit-transition: color .25s 1.5s, max-width 2s;
+    transition: color .25s 1.5s, max-width 2s;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    color: white;
+    padding: 0px;
+    width: 80px;
+}
+
+.btn:hover .btn-text,
+.btn:focus .btn-text {
+    max-width: 300px;
+    color: white;
+}
+/****************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************************************/
+
+
+/*Width of Arrival Time textbox*/
+#newPatientDate {
+    width: 100px;
+}
+
+#Dateinput {
+    width: 200px;
+}
+
+#Dateclear {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    bottom: 0;
+    height: 14px;
+    margin: auto;
+    font-size: 14px;
+    cursor: pointer;
+    color: #ccc;
+    background-color: white;
+    border: none;
+    /*outline: none;*/
+}
+
+
+/*Checkbox position*/
+/*#flexCheckDefault {
+    margin-left: 90px;
+}*/
+
+/*CheckBox*/
+#flexCheckDefault {
+    margin-left: 0px;
+}
+
+/*Size of Date text field*/
+#dateText {
+    width: 160px;
+}
+
+/***********Patient comment button***************/
+.Comments {
+    background-color: #6B818C;
+    color: white;
+}
+
+.CommentsIcon {
+    background-color: white;
+    border: none;
+    outline: none;
+}
+
+    .CommentsIcon:focus {
+        background-color: white;
+        border: none;
+        outline: none;
+    }
+
+/*text area*/
+textarea {
+    overflow-y: scroll;
+    height: 140px;
+    resize: none; /* Remove this if you want the user to resize the textarea */
+    border: 2px solid lightgrey;
+}
+
+
+/*Modal header*/
+.modal-header {
+    background-color: #F5F5F5;
+    padding-bottom: 2px;
+}
+
+
+Modal Header Close Button
+.modal-header .close {
+    margin-top: 0px;
+    padding: 0rem 1rem;
+}
+
+/*******************************************/
+
+/*User Account Drop Down Menu*/
+.acctdropbtn {
+    background-color: #43444D;
+    color: #E1DADA;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-top: -5px;
+
+}
+
+.acctdropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 11px;
+}
+
+.acctdropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #43444D;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .acctdropdown-content a {
+        color: #E1DADA;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .acctdropdown-content a:hover {
+            background-color: #F4F5F2;
+            color: black;
+        }
+
+.acctdropdown:hover .acctdropdown-content {
+    display: block;
+}
+
+.acctdropdown:hover .acctdropbtn {
+    background-color: #43444D;
+}
+
+
+/*Modal Settings Button*/
+.SettingsBtn {
+    /*color: #E1DADA;
+    margin-left: 2px;*/
+    color: #E1DADA;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+btn .SettingsBtn:hover{
+    color:green;
+}
+
+
+
+
+
+
+/******************/
+/******Modals******/
+/******************/
+
+/*Setting Modal*/
+/*#myModal {
+    margin-top: 30px;
+}
+
+.modal-header {
+    font-size: 20px;
+    background-color: #6B818C;
+    color: #FFFFFF;
+}
+
+.modal-header .closeSettings {
+    color: #FFFFFF;
+    margin-top: -19px;
+}*/
+
+
+/*Comment Section Modal*/
+/*#commentModal {
+    margin-top: 30px;
+}
+
+.modal-content .CommentSection {
+    width: 579px;
+}*/
+
+
+
+
+/*password */
+/*.progress {
+    height: 5px;
+}
+
+.control-label {*/
+    /*text-align: left !important;*/
+    /*padding-bottom: 7px;
+}
+
+.form-horizontal {
+    padding: 25px 0px;*/
+    /*border: 1px solid #eee;*/
+    /*border-radius: 5px;
+    width:630px;*/
+   /* margin-left: -33px;*/
+/*}
+
+select.form-control:focus {
+    border-color: #e9ab66;
+    box-shadow: none;
+}
+
+.block-help {
+    font-weight: 300;
+}
+
+.terms {
+    text-decoration: underline;
+}
+
+.modal-content settings{
+    width: 470px;
+}
+
+.modal {
+    text-align: center;
+    padding: 0 !important;
+}
+
+    .modal:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -4px;
+    }
+
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+.settingsModalRow{
+    margin-right: -360px;
+}
+
+.divider {
+    position: absolute;
+    height: 2px;
+    border: 1px solid #eee;
+    width: 100%;
+    top: 10px;
+    z-index: -5;
+}
+
+.ex-account {
+    position: relative;
+}
+
+    .ex-account p {
+        background-color: rgba(255, 255, 255, 0.41);
+    }
+
+select:hover {*/
+    /*color: #444645;*/
+    /*background: #ddd;
+}
+
+
+.fa-file-text {
+    color: #edda39;
+}
+
+.fa fa-times {
+    color: red;
+}*/
+
+/*.mar-top-bot-50 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}*/
+
+/*Confirm Password text field*/
+/*.passwordRequirements{
+    margin-left: 41px;
+    margin-top: 3px;
+}*/
+
+/*New Password text field*/
+/*.passwordInput{
+    padding-left: 47px;
+}*/
+
+/*Password strength level*/
+/*.resultStrength {
+    margin-left: 206px;
+    margin-top: -27px;
+
+}*/
+
+/*New & Confirm password label*/
+/*PasswordLabel{
+
+}*/
+/*Password Doesn't match Text*/
+/*.passwordConfirm {
+}*/
+
+
+/*Temporay Password information icon*/
+/*.containerTemp {
+    display: block;
+    position: relative;
+    margin-left: 140px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}*/
+
+/* On mouse-over, add a grey background color */
+/*.iconBtn:hover {
+    background-color: white;
+}
+
+.tooltiptext:before {
+    visibility: visible;
+    width: 240px;
+    background-color: white;
+    color: black;
+    font-size: 0.9em;
+    text-align: left;
+    border-radius: 5px;
+    padding: 13px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.4);
+}
+    .tooltiptext:after
+{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px;
+    border-color: white transparent transparent white;
+    transform: rotate(45deg);
+    top: -12px;
+    left: 40px;
+    border-radius: 6px 0px 0px 0px;
+}*/
+
+/*a {
+    color: #6152f4;
+    text-decoration: none;
+}*/
+
+
+ /*Flasing red for new entry*/
+/*.invalid-blink {
+    background-color: red;
+}*/
+
+/*sbar datetime picker*/
+/*.sBarTextBox {
+    display: none;
+}*/
+
+/*MSE Start datetime picker*/
+/*.MSEStartTextBox {
+    display: none;
+}
+
+.dateTime{
+    width:150px;
+}*/
+
+/*Patient Wait Time Table*/
+#waitingTable {
+    width: 300px;
+    background-color: white;
+    margin-left: 284px;
+    margin-top: 54px;
+}
+
+.tableTitle {
+    background-color: #43444D;
+    color: white;
+    text-align: center !important;
+}
+
+.columnName {
+    background-color: #B2C4CF;
+    color: white;
+    text-align: center;
+}
+
+.headTitle {
+    padding-bottom: 83px;
+}
+
+.medTitle {
+    color: white;
+    font-size: 40px;
+    display: block;
+    margin-left: 800px;
+    margin-top: 13px;
+    padding-bottom: 12px;
+}
+
+/*Table, Links, buttons*/
+.table {
+    background-color: white;
+    margin-left: -15px;
+    width: 402px;
+    max-width: 402px;
+}
+
+.userLinks1 {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    float: left;
+    margin-top: 20px;
+}
+
+
+.userLinks2 {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    float: right;
+    margin-top: 20px;
+}
+
+/*Home, Transfers, Cert, Accounts & Reports buttons*/
+.userBtn {
+    background-color: #43444D;
+    color: white;
+    border: none;
+}
+
+
+/*Space between tables*/
+.tableSpace {
+    background-color: #EEEFE9;
+    padding: 5px;
+    border: none !important;
+}
+
+.table thead th {
+    vertical-align: middle;
+}
+
+    /*Search bar*/
+.homepageSearch {
+    overflow: hidden;
+    background-color: #43444D;
+    width: 93.1%;
+    margin-left: 74px;
+    height: 70px;
+    margin-bottom: -6px;
+}
+
+    .homepageSearch a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 30px;
+    }
+
+    .homepageSearch .search-container {
+        float: right;
+        margin-left: 40px;
+    }
+
+    .homepageSearch input[type=text] {
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+        margin-top: 15px;
+        margin-right: 10px;
+        float: right;
+        width: 368px;
+    }
+
+#userInput {
+    float: right;
+}
+
+
+.homepageSearch .search-container button:hover {
+    background: #ccc;
+}
+
+.homepageData {
+    padding-top: 0px !important;
+    padding-left: 491px;
+}
+
+.homepageTable {
+    padding-top: 0px !important;
+    padding-left: 507px;
+}
+
+.homepageContainer {
+    padding-top: 20px;
+    margin-left: 90px;
+}
+
+.homepagetable {
+    background-color: white;
+    /*margin-left: -15px;*/
+    margin-left: 0px;
+    width: 402px;
+    max-width: 402px;
+}

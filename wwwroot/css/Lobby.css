@@ -1,0 +1,444 @@
+﻿
+body {
+    margin-bottom: 60px;
+    background-color: #EEEFE9;
+    /*padding-left: 30px;*/
+}
+
+
+.titlebox {
+    height: 90px;
+}
+
+#AddBtn {
+    border: 1px solid black;
+    margin-bottom: 12px;
+}
+
+.cancelNew {
+    border: 1px solid black;
+}
+
+.patientButton {
+    padding-top: 15px;
+    margin-left: 413px;
+}
+
+/*Multi select drop down for Reason*/
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    /*-khtml-user-select: none;*/
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.ReasonContainer {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+}
+
+
+/*dateTimeScroll*/
+.dateTimeScroll {
+    overflow: auto;
+}
+
+
+
+/*Remove grey hover on dropdowns*/
+td select:hover {
+    background-color: white;
+}
+
+
+/******DataTable height********/
+.dataTables_scrollBody {
+    height: 633px;
+    width: 82% !important;
+}
+
+
+/***********Page Title: Lobby**********/
+.pageTitle {
+    width: 1418px;
+}
+
+
+
+
+#PatientTable_filter {
+    margin-right: 350px;
+}
+
+
+/*Patient arrival time date time box*/
+input[type="datetime-local"] {
+    height: 29px;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+#sexDropDown {
+    width: 84px;
+}
+
+#arrivalMode {
+    width: 400px;
+}
+
+#arrivalType {
+    width: 90px;
+}
+
+#chiefComplaint {
+    width: 400px;
+}
+
+/*Reason Drop Down*/
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 400px;
+    outline: 1px solid #E0E4E8;
+}
+
+.btn-light:not(:disabled):not(.disabled).active, .btn-light:not(:disabled):not(.disabled):active, .show > .btn-light.dropdown-toggle {
+    background-color: transparent;
+}
+
+.bootstrap-select .dropdown-toggle:focus {
+    outline: none !important;
+}
+/*Patient Wait Time Table*/
+#waitingTable {
+    width: 400px;
+    background-color: white;
+    margin-top: 54px;
+    margin-left: 50px;
+}
+
+.tableTitle {
+    background-color: #43444D !important;
+    color: white;
+    text-align: center !important;
+    font-size: 25px;
+}
+
+.columnName {
+    background-color: #B2C4CF !important;
+    color: white;
+    text-align: center;
+}
+
+.newPatientTitle {
+    background-color: #43444D;
+    color: white;
+    padding: 20px;
+    width: 644.5px;
+    margin-left: -11px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 36px;
+}
+
+.container-fluid {
+    padding: 0px;
+}
+/*Add name modal button*/
+#addNameBtn {
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+/*Add new Patient form*/
+#AddPatientForm {
+    width: 500px;
+    margin-left: 89px;
+}
+
+/*Read Only Text*/
+.patientReadOnly {
+    text-decoration: none !important;
+    outline: none !important;
+    border: 0;
+}
+
+/*titles for input*/
+.col-form-label {
+    font-size: 18px;
+}
+
+.lobbyBtns {
+    margin-top: 41px;
+    margin-left: 115px;
+    margin-bottom: 37px;
+}
+
+.submitBtn {
+    background-color: #43444D !important;
+    color: white;
+    width: 115px;
+}
+
+.cancelBtn {
+    width: 115px;
+}
+
+#cancel {
+    margin-left: 123px;
+    margin-top: -34px;
+}
+
+
+.form-control {
+    width: 400px;
+}
+
+/*Name drop down list*/
+.chosen-container-single .chosen-single {
+    margin-left: -14px;
+    height: 33px;
+    background: none;
+    width: 289px;
+}
+
+    /*Drop Down text "select"*/
+    .chosen-container-single .chosen-single span {
+        margin-top: 3px;
+        width: 289px !important;
+    }
+
+    /*Drop down list arrow*/
+    .chosen-container-single .chosen-single div {
+        margin-top: 3px;
+    }
+
+.chosen-container .chosen-container-single {
+    width: 280px !important;
+}
+
+/*Date Time display*/
+#lblDateTime {
+    font-size: 14px;
+    margin-left: -11px;
+    margin-top: 8px;
+}
+
+/*Swal submit confirmation button*/
+.swal-button {
+    background-color: #B2C4CF;
+}
+
+    .swal-button:not([disabled]):hover {
+        background-color: #B2C4CF;
+    }
+
+/*Swal clear button font color*/
+.swal-button--cancel {
+    color: white;
+}
+
+.hide {
+    display: none;
+}
+
+
+/*Table*/
+#lobbyTable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 30%;
+    margin-left: 32%;
+}
+
+    #lobbyTable td, #lobbyTable th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #lobbyTable tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+
+    #lobbyTable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #43444D;
+        color: white;
+    }
+
+
+
+
+
+
+
+
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/**********************SMALL SCREEN*******************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+
+@media only screen and (max-width: 1300px) {
+
+    .headTitle {
+        padding-bottom: 40px;
+    }
+    
+    
+    .patientContainer {
+        padding-right: 15px;
+        /*padding-left: 0px;*/
+        margin-right: auto;
+        margin-left: 296px;
+        width: 100%;
+    }
+
+    .medTitle {
+        color: white;
+        font-size: 40px;
+        display: block;
+        margin-left: 40%;
+        margin-top: 13px;
+    }
+
+    /*New patient table*/
+    .newPatient {
+        background-color: white;
+        /*margin-left: 412px;*/
+        width: 644px;
+    }
+
+    .LobbyBtns {
+        margin-left: 7%;
+        margin-bottom: 4%;
+    }
+
+    .lobBtn {
+        background-color: #43444D;
+        font-size: 27px;
+        padding: 18px;
+        width: 35%;
+    }
+    
+    
+    #lobbyTable {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 47%;
+        margin-left: 25%;
+    }
+
+    .readyTable {
+        margin-left: 25%;
+    }
+
+}
+
+
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/***********************WIDE SCREEN*******************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+
+@media only screen and (min-width: 1301px) {
+
+    .headTitle {
+        padding-bottom: 83px;
+    }
+    
+    
+    .patientContainer {
+        padding-right: 15px;
+        padding-left: 36%;
+        margin-right: auto;
+        margin-left: 0px;
+        width: 643px;
+    }
+
+    .medTitle {
+        color: white;
+        font-size: 40px;
+        display: block;
+        margin-left: 47%;
+        margin-top: 13px;
+    }
+
+    /*New patient table*/
+    .newPatient {
+        background-color: white;
+        /*margin-left: 412px;*/
+        width: 643px !important;
+        max-width: 643px;
+    }
+
+    .LobbyBtns {
+        margin-bottom: 7%;
+        margin-left: 6%;
+        margin-top: 6%;
+    }
+
+    .lobBtn {
+        background-color: #43444D;
+        font-size: 27px;
+        padding: 18px;
+        width: 30%;
+    }
+
+    .NewWalkBtns {
+        margin-bottom: 53px;
+        margin-left: 21%;
+        margin-top: 47px;
+    }
+
+    .lobbyPatientCancelBtn {
+        background-color: white;
+        border: 1px solid #43444D;
+        color: black;
+        padding: 10px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+    }
+
+        .lobbyPatientCancelBtn:hover {
+            color: black;
+        }
+
+
+    .lobbyPatientSubmitBtn {
+        background-color: #43444D;
+        border: 1px solid #43444D;
+        color: white;
+        padding: 10px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+    }
+
+        .lobbyPatientSubmitBtn:hover {
+            color: white;
+        }
+
+    .readyTable {
+        margin-left: 32%;
+    }
+
+}

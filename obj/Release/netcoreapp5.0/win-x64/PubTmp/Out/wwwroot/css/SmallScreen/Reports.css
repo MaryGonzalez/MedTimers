@@ -1,0 +1,122 @@
+﻿body {
+    background-color: #EEEFE9;
+}
+
+/*working Doughnut chart*/
+#DispositionChart {
+    background-color: white;
+    margin-top: 54px;
+}
+
+#ComplaintChart {
+    background-color: white;
+    margin-top: 54px;
+}
+
+#ReasonChart {
+    background-color: white;
+    margin-top: 54px;
+}
+
+#AssessorTimeChart {
+    background-color: white;
+    margin-top: 47px;
+    margin-left: 121px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pageTitleReports {
+    color: #EEEFE9;
+    background-color: #43444D;
+    height: 56px;
+    width: 1750px;
+    font-size: 29px;
+    padding-left: 16px;
+    padding-top: 7px;
+    margin-left: 72px;
+    margin-top: -14px;
+    position: relative;
+    display: inline-block;
+}
+
+.ExcelBtnReports {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    float: right;
+    margin-top: 1px;
+    margin-right: 18px;
+}
+
+
+/*Bar graph icon*/
+#reports {
+    float: right;
+    margin-left: 1641px;
+    margin-top: -492px;
+    color: #E1DADA;
+    z-index: 1;
+}
+
+.quarterToggle{
+    float: right;
+}
+
+.reportToggle{
+    margin-left: 727px;
+}
+
+.reportStats {
+    margin-left: 88px;
+    margin-top: 46px;
+    color: white;
+    text-align: center;
+    opacity: 0.81;
+}
+
+.statTitle{
+    font-size: 15px;
+}
+
+.statNumber {
+    font-weight: bold;
+    font-size: 27px;
+}
+
+.barChart{
+}
+
+.doughnutCharts {
+    width: 1900px;
+    margin-left: 218px;
+}
+
+#dispositionChartDownload {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    float: right;
+    margin-top: 12px;
+    margin-right: 18px;
+}
+
+.MedTitleReports {
+    margin-left: 537px !important;
+}
+
+
+.reportsBtn {
+    background-color: #43444D;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 44%;
+    margin-bottom: 24px;
+    margin-top: 7%;
+}

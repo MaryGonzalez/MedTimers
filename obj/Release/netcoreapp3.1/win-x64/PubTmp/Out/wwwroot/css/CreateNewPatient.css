@@ -1,0 +1,225 @@
+﻿body {
+    margin-bottom: 39px;
+    background-color: #EEEFE9;
+    padding-left: 30px;
+}
+
+p {
+    margin-bottom: 0rem;
+}
+
+.headTitle {
+    padding-bottom: 45px;
+}
+
+.emergContact {
+    margin-top: 43px;
+}
+
+.submitPatientBtn {
+    background-color: #43444D;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 217px;
+}
+
+.cancelPatientBtn {
+    background-color: white;
+    border: 1px solid #43444D;
+    color: black;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+    .cancelPatientBtn:hover {
+        color: black;
+    }
+
+
+.form-check-input:checked {
+    background-color: #43444D;
+    border-color: #43444D;
+}
+
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/**********************SMALL SCREEN*******************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+@media screen and (max-width: 1300px) {
+    .medTitle {
+        color: white;
+        font-size: 40px;
+        display: block;
+        margin-left: 545px;
+        margin-top: 8px;
+    }
+
+    .patientContainer {
+        padding: 33px;
+        padding-left: 44px;
+        margin-right: auto;
+        margin-left: 14%;
+        width: 892px;
+        background-color: white;
+    }
+
+    .newPatientBtns {
+        margin-top: 62px;
+        float: right;
+        margin-left: 8%;
+    }
+
+
+    .newPatientTitle {
+        background-color: #6B818C;
+        margin: -33px 0px 20px -44px;
+        color: white;
+        padding: 14px;
+        width: 891.5px;
+        text-align: left;
+        font-size: 26px;
+    }
+
+
+
+    .hide {
+        display: none !important;
+    }
+
+
+    .myDiv {
+        display: none;
+        padding: 10px;
+    }
+
+    .Track_Reason .select2-container--default .select2-selection--multiple {
+        width: 778px;
+    }
+
+
+    .Patient_Pronouns .select2-container--default .select2-selection--multiple {
+        width: 282px;
+    }
+
+
+    .Patient_Gender .select2-container--default .select2-selection--multiple {
+        width: 298px;
+    }
+
+    #guardianCheck {
+        float: none;
+    }
+
+    #preferredYes {
+    }
+
+
+    #preferredNo {
+        margin-left: 20px;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+
+    a.cancelPatientBtn:link {
+        background-color: white;
+        border: 1px solid #43444D;
+        color: black;
+        padding: 10px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+    }
+
+    a.cancelPatientBtn:hover {
+        color: black;
+    }
+
+    .requiredFieldPatient {
+        margin-top: -2%;
+        margin-bottom: 3%;
+        margin-left: 87%;
+    }
+
+    .guardianOptional {
+        margin-bottom: 2%;
+        margin-top: -1%;
+    }
+
+    Arrival Type radio buttons
+    .arriveType {
+        margin-left: 14px;
+    }
+}
+
+
+
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/***********************WIDE SCREEN*******************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+
+@media screen and (min-width: 1301px) {
+    .medTitle {
+        color: white;
+        font-size: 40px;
+        display: block;
+        margin-left: 782px;
+        margin-top: 8px;
+    }
+
+    .patientContainer {
+        padding: 33px;
+        padding-left: 44px;
+        margin-right: auto;
+        margin-left: 481px;
+        width: 859px;
+        background-color: white;
+    }
+
+    .newPatientBtns {
+        margin-top: 33px;
+        float: right;
+    }
+
+
+
+    .newPatientTitle {
+        background-color: #6B818C;
+        margin: -33px 0px 20px -44px;
+        color: white;
+        padding: 14px;
+        width: 859.5px;
+        text-align: left;
+        font-size: 26px;
+    }
+
+
+    .requiredFieldPatient {
+        float: right;
+    }
+}

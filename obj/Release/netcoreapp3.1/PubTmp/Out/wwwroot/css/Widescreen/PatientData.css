@@ -1,0 +1,361 @@
+﻿.medTitle {
+    color: white;
+    font-size: 40px;
+    display: block;
+    margin-left: 800px;
+    margin-top: 13px;
+    padding-bottom: 12px;
+}
+
+.certData {
+    padding-top: 0px !important;
+    padding-left: 491px;
+}
+
+.certTable {
+    padding-top: 0px !important;
+    padding-left: 507px;
+}
+.table {
+    background-color: white;
+    margin-left: -15px;
+    width: 402px;
+    max-width: 402px;
+}
+
+.userLinks1 {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    float: left;
+}
+
+
+.userLinks2 {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    float: right;
+}
+
+/*Home, Transfers, Cert, Accounts & Reports buttons*/
+.userBtn {
+    background-color: #43444D;
+    color: white;
+    border: none;
+}
+
+/*Patient Tab*/
+.patientTabs {
+    background-color: white;
+    margin-left: 300px;
+    margin-right: 500px;
+}
+
+.dataSearch {
+    overflow: hidden;
+    background-color: #43444D;
+    width: 899px;
+}
+
+    .dataSearch a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 30px;
+    }
+
+    .dataSearch .search-container {
+        float: right;
+        margin-left: 40px;
+    }
+
+    .dataSearch input[type=text] {
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+        margin-top: 15px;
+        margin-right: 10px;
+        float: right;
+    }
+
+    .dataSearch .search-container button:hover {
+        background: #ccc;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+    margin-top: 20px !important;
+    margin-bottom: 47px;
+}
+
+label {
+    font-size: 14px !important;
+    text-align: right;
+}
+
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-right: 20px;
+    border: 1px solid #C8C9CA;
+    border-radius: 5px;
+}
+
+
+
+.SpaceData {
+    margin-bottom: 22px;
+}
+
+   
+
+.medTitle {
+    color: white;
+    font-size: 40px;
+    display: block;
+    margin-left: 852px;
+    margin-top: 13px;
+    padding-bottom: 12px;
+}
+
+
+.table {
+    background-color: white;
+    margin-left: -15px;
+    width: 402px;
+    max-width: 402px;
+}
+
+.userLinks1 {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    float: left;
+}
+
+
+.userLinks2 {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    float: right;
+}
+/*Home, Transfers, Cert, Accounts & Reports buttons*/
+.userBtn {
+    background-color: #43444D;
+    color: white;
+    border: none;
+}
+/*Patient Tab*/
+.patientTabs {
+    background-color: white;
+    margin-left: 389px;
+    margin-right: 397px;
+}
+
+
+
+.newAccountTitle {
+    background-color: #43444D;
+    color: white;
+    padding: 16px;
+    width: 402px;
+    margin-left: -15px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+
+#AddNewAccount {
+    width: 500px;
+    background-color: white;
+    padding: 48px 100px 40px 40px;
+}
+
+
+
+hr {
+    width: 74%;
+    margin-left: 81px;
+    margin-bottom: 45px;
+}
+
+.userTitle {
+    margin-left: 145px;
+    font-weight: normal;
+    font-size: 30px;
+}
+
+
+.addAcct {
+    padding-top: 30px;
+}
+
+
+.editCertBtn {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+}
+
+
+
+/*TABLES*/
+.row {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: center;
+    padding: 16px;
+}
+
+
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+#waitingTable {
+    margin-bottom: 54px;
+    margin-top: 0px;
+}
+
+
+
+.transferBtns {
+    margin-left: 152px;
+}
+
+.trackingBtns {
+    margin-left: 152px;
+}
+
+.submitBtn {
+    background-color: #43444D !important;
+    color: white;
+    width: 115px;
+}
+
+.cancelBtn {
+    width: 115px;
+}
+
+
+
+
+/*Transfers page table space*/
+.tableSpace {
+    background-color: #EEEFE9;
+    padding: 5px;
+}
+
+/*.transferSearch {
+    font-size: 20px;
+    float: right;
+    margin-right: 13px;
+    margin-top: 9px;
+}*/
+
+.transferSearch {
+    overflow: hidden;
+    background-color: #43444D;
+    width: 899px;
+}
+
+    .transferSearch a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 30px;
+    }
+
+    .transferSearch .search-container {
+        float: right;
+        margin-left: 40px;
+    }
+
+    .transferSearch input[type=text] {
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+        margin-top: 15px;
+        margin-right: 10px;
+        float: right;
+    }
+
+    .transferSearch .search-container button:hover {
+        background: #ccc;
+    }
+
+
+/*******Lobby, Transfer, Cert Numbers********/
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background-color: #F4F5F2;
+    color: #6B818C;
+    background-position: 9px 0px;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    line-height: 18px;
+    overflow: hidden;
+    padding: 4px 6px;
+    /*width: 1750px;*/
+    margin-bottom: 3%;
+    font-size: 30px;
+    vertical-align: middle;
+    /*margin-left: 61px;*/
+    text-align: center;
+    height: 128px;
+}
+
+
+.grid-child span {
+    display: block;
+    padding: 10px;
+}

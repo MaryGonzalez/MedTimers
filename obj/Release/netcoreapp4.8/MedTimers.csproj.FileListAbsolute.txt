@@ -1,0 +1,8 @@
+H:\MedTimers\MedTimers\obj\Release\netcoreapp4.8\MedTimers.csproj.AssemblyReference.cache
+H:\MedTimers\MedTimers\obj\Release\netcoreapp4.8\MedTimers.GeneratedMSBuildEditorConfig.editorconfig
+H:\MedTimers\MedTimers\obj\Release\netcoreapp4.8\MedTimers.AssemblyInfoInputs.cache
+H:\MedTimers\MedTimers\obj\Release\netcoreapp4.8\MedTimers.AssemblyInfo.cs
+H:\MedTimers\MedTimers\obj\Release\netcoreapp4.8\MedTimers.csproj.CoreCompileInputs.cache
+H:\MedTimers\MedTimers\obj\Release\netcoreapp4.8\MedTimers.MvcApplicationPartsAssemblyInfo.cache
+H:\MedTimers\MedTimers\obj\Release\netcoreapp4.8\MedTimers.RazorAssemblyInfo.cache
+H:\MedTimers\MedTimers\obj\Release\netcoreapp4.8\MedTimers.RazorAssemblyInfo.cs

@@ -1,0 +1,46 @@
+﻿body {
+    background-color: #EEEFE9;
+}
+
+.pageTitleReports {
+    color: #EEEFE9;
+    background-color: #43444D;
+    height: 56px;
+    width: 1750px;
+    font-size: 29px;
+    padding-left: 16px;
+    padding-top: 7px;
+    margin-left: 72px;
+    margin-top: -14px;
+    position: relative;
+    display: inline-block;
+}
+
+.ExcelBtnReports {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    float: right;
+    margin-top: 1px;
+    margin-right: 18px;
+}
+
+.MedTitleReports {
+    margin-left: 537px !important;
+}
+
+
+.reportsBtn {
+    background-color: #43444D;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 44%;
+    margin-bottom: 24px;
+    margin-top: 7%;
+}

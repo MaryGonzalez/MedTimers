@@ -1,0 +1,36 @@
+﻿@model MedTimers.Models.Users
+
+@{
+    Layout = null;
+}
+ <link rel="shortcut icon" href="~/Images/clock.PNG" />
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+
+<link rel="stylesheet" href="~/css/Login.css" />
+<script src="~/js/Login.js"></script>
+
+<div class="background-image"></div>
+
+<div class="content">
+    <div class="wrapper">
+        <form asp-action="Login" class="row g-3 form-signin">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <h2 class="form-signin-heading medTimersHeader">MedTimers @ViewBag.error</h2>
+          
+            <input type="text" class="form-control" asp-for="Username" placeholder="Username" required="" autofocus="" autocomplete="off" />
+            <input type="password" class="form-control" asp-for="User_Password" placeholder="Password" required="" />
+
+
+            <p style="color:red">@ViewBag.LoginError</p>
+
+            <button class="btn btn-lg btn-block loginBtn" type="submit">LOGIN</button>
+
+            <p class="resetPassword">Forgot your password? Contact your administrator for a password reset</p>
+
+
+        </form>
+    </div>
+</div>
+
+

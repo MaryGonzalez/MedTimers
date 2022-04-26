@@ -1,0 +1,130 @@
+﻿/*
+.background-image {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+    background-image: url('../Images/HS1.jpg');
+    width: 50%;
+    height: 138%;
+    background-size: 100% 100%;
+    transform: scale(1.1);
+    margin-top: 85px;
+}
+
+#form-print {
+    z-index: 9999;
+}*/
+
+.patientContainer {
+    padding: 33px;
+    padding-left: 44px;
+    margin-right: auto;
+    margin-left: 547px;
+    width: 879px;
+    background-color: white;
+    margin-top: 2%;
+}
+
+.questionnaireTitle {
+    margin-left: 28%;
+    margin-bottom: 2%;
+}
+
+.hrs {
+    margin-left: 35px;
+}
+
+.authorize {
+    margin-top: 14px;
+}
+/*.form-control {
+    padding: 1.375rem 2.75rem !important;
+}*/
+
+.boxInput {
+    height: 30px;
+    margin-top: 4px;
+}
+
+
+
+
+.signature {
+    border: 0;
+    border-bottom: 1px solid #000;
+    margin: 21px 5px 0px 36px;
+}
+
+.signature2{
+    width: 30%;
+}
+
+
+
+
+
+.progressbar {
+    counter-reset: step;
+    padding: 0;
+    /* for demo */
+    margin: 100px auto 0;
+    max-width: 800px;
+}
+
+    .progressbar li {
+        float: left;
+        list-style: none;
+        position: relative;
+        text-align: center;
+        width: calc(100% / 5);
+    }
+
+        .progressbar li:before {
+            background: #fff;
+            border: 2px solid #bebebe;
+            border-radius: 50%;
+            color: #bebebe;
+            content: counter(step);
+            counter-increment: step;
+            display: block;
+            font-weight: 700;
+            height: 30px;
+            line-height: 27px;
+            margin: 0 auto 10px;
+            text-align: center;
+            width: 30px;
+        }
+
+        .progressbar li:after {
+            background: #979797;
+            content: '';
+            height: 3px;
+            left: -50%;
+            position: absolute;
+            top: 15px;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .progressbar li:first-child:after {
+            content: none;
+        }
+
+        .progressbar li.active:after,
+        .progressbar li.complete:after {
+            background: #3953A8;
+        }
+
+        .progressbar li.active:before,
+        .progressbar li.complete:before {
+            background: #3953A8;
+            border-color: #3953A8;
+            color: #fff;
+        }
+
+        .progressbar li.active {
+            color: #3953A8;
+            font-weight: 700;
+        }

@@ -1,0 +1,304 @@
+﻿.patientContainer {
+    padding-right: 15px;
+    /*padding-left: 0px;*/
+    margin-right: auto;
+    margin-left: 296px;
+    width: 100%;
+}
+
+.titlebox {
+    height: 90px;
+}
+
+.medTitle {
+    color: white;
+    font-size: 40px;
+    display: block;
+    margin-left: 40%;
+    margin-top: 13px;
+}
+
+#AddBtn {
+    border: 1px solid black;
+    margin-bottom: 12px;
+}
+
+.cancelNew {
+    border: 1px solid black;
+}
+
+.patientButton{
+    padding-top: 15px;
+    margin-left: 413px;
+}
+/*Multi select drop down for Reason*/
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    /*-khtml-user-select: none;*/
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
+
+.ReasonContainer{
+    padding-right:0px;
+    padding-left: 0px;
+    margin-right: auto;
+}
+/**********************************************/
+/*dateTimeScroll*/
+.dateTimeScroll {
+    overflow: auto;
+}
+
+
+
+    /*Remove grey hover on dropdowns*/
+    td select:hover{
+        background-color:white;
+    }
+
+
+/******DataTable height********/
+.dataTables_scrollBody {
+    height: 633px;
+    width: 82% !important;
+}
+/*****************************/
+
+
+/***********Page Title: Lobby**********/
+.pageTitle {
+    width: 1418px;
+}
+
+/***************************************/
+
+
+
+#PatientTable_filter {
+    margin-right: 350px;
+}
+
+
+
+
+/*
+.DateTimeText{
+    width: 50px;
+}*/
+/*Patient arrival time date time box*/
+input[type="datetime-local"] {
+    height: 29px;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+#sexDropDown{
+    width: 84px;
+}
+
+#arrivalMode {
+    width: 400px;
+}
+
+#arrivalType {
+    width: 90px;
+}
+
+#chiefComplaint {
+    width: 400px;
+}
+
+/*Reason Drop Down*/
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 400px;
+    outline: 1px solid #E0E4E8;
+}
+
+.btn-light:not(:disabled):not(.disabled).active, .btn-light:not(:disabled):not(.disabled):active, .show > .btn-light.dropdown-toggle{
+background-color: transparent;
+}
+
+.bootstrap-select .dropdown-toggle:focus{
+    outline: none !important;
+}
+/*Patient Wait Time Table*/
+#waitingTable {
+    width: 400px;
+    background-color: white;
+    margin-top: 54px;
+    margin-left: 50px;
+  
+}
+
+.tableTitle {
+    background-color: #43444D !important;
+    color: white;
+    text-align: center !important;
+    font-size: 25px;
+}
+
+.columnName {
+    background-color: #B2C4CF !important;
+    color: white;
+    text-align: center;
+}
+
+.headTitle {
+    padding-bottom: 83px;
+}
+
+/*New patient table*/
+.newPatient {
+    background-color: white;
+    /*margin-left: 412px;*/
+    width: 644px;
+}
+
+.newPatientTitle {
+    background-color: #43444D;
+    color: white;
+    padding: 20px;
+    width: 644.5px;
+    margin-left: -11px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 36px;
+}
+
+.container-fluid{
+    padding: 0px;
+}
+/*Add name modal button*/
+#addNameBtn {
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+/*Add new Patient form*/
+#AddPatientForm{
+    width: 500px;
+    margin-left: 89px;
+}
+
+/*Read Only Text*/
+.patientReadOnly {
+    text-decoration: none !important;
+    outline: none !important;
+    border:0;
+}
+
+/*titles for input*/
+.col-form-label{
+    font-size: 18px;
+}
+
+/*Submit new patient button*/
+/*.submitPatient {
+    background-color: #43444D;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 217px;
+}*/
+
+/*
+.submitPatientBtn {
+    background-color: #43444D;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 217px;
+    margin-bottom: 24px;
+    margin-top: 20px;
+}*/
+.lobbyBtns {
+    margin-top: 41px;
+    margin-left: 115px;
+    margin-bottom: 37px;
+}
+
+
+.submitBtn {
+    background-color: #43444D !important;
+    color: white;
+    width: 115px;
+}
+
+.cancelBtn {
+    width: 115px;
+}
+
+#cancel {
+    margin-left: 123px;
+    margin-top: -34px;
+}
+
+
+.form-control {
+    width: 400px;
+}
+
+/*Name drop down list*/
+.chosen-container-single .chosen-single{
+    margin-left: -14px;
+    height: 33px;
+    background: none;
+    width: 289px;
+}
+
+/*Drop Down text "select"*/
+    .chosen-container-single .chosen-single span {
+        margin-top: 3px;
+        width: 289px !important;
+    }
+
+/*Drop down list arrow*/
+.chosen-container-single .chosen-single div {
+    margin-top: 3px;
+
+}
+
+.chosen-container .chosen-container-single {
+    width: 280px !important;
+}
+
+/*Date Time display*/
+#lblDateTime {
+    font-size: 14px;
+    margin-left: -11px;
+    margin-top: 8px;
+}
+
+/*Swal submit confirmation button*/
+.swal-button {
+    background-color: #B2C4CF;
+}
+
+    .swal-button:not([disabled]):hover {
+        background-color: #B2C4CF;
+    }
+
+/*Swal clear button font color*/
+.swal-button--cancel {
+color:white;
+}
+
+.hide {
+    display: none;
+}

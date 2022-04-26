@@ -1,0 +1,332 @@
+﻿@*CREATE NEW PATIENT FORM*@
+
+
+@model MedTimers.Models.AllEdit
+@{
+    ViewData["Title"] = "MedTimers";
+    Layout = "";
+
+}
+<link rel="shortcut icon" href="~/Images/clock.PNG" />
+<link rel="stylesheet" href="~/css/StyleSheet.css"/>
+
+@*User access based on account type
+    1 - Administrator
+    2 - Nurse
+    3 - Assessor
+    4 - Sub Administrator
+*@
+@if (ViewBag.userType == "1" || ViewBag.userType == "2" || ViewBag.userType == "3" || ViewBag.userType == "4")
+{
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+
+
+    <!--Date Time Now-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/additional-methods.js"></script>
+
+    <!--Reason multi select-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+    <!--Multi select dropdown-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  @*  <link rel="stylesheet" media="screen and (max-width: 1300px)" href="~/css/SmallScreen/CreateNewPatient.css" />
+    <link rel="stylesheet" media="screen and (min-width: 1301px)" href="~/css/Widescreen/CreateNewPatient.css" />*@
+    
+        <link rel="stylesheet" href="~/css/CreateNewPatient.css" />
+    <script src="~/js/NewPatient.js"></script>
+
+</head>
+
+<body>
+
+
+    <div class="row headTitle">
+        <div class="col-sm-12 titlebox" style="background-color:#43444D; padding-bottom:20px; ">
+            <p class="medTitle">MedTimers</p>
+        </div>
+    </div>
+
+
+    <div class="patientContainer">
+        <h4 class="newPatientTitle">New Patient</h4>
+        <p class="requiredFieldPatient">*required field</p>
+        <div class="row" style="width: 819px">
+            <div class="col-12">
+                @*Form to create a new patient*@
+                @*Send to CreateNewPatient in Controller*@
+                <form asp-action="CreateNewPatient" id="NewPatient" class="row g-3" autocomplete="off">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    @*Patient First Name*@
+                    <div class="col-6">
+                        <label asp-for="Patient_FirstName" class="control-label">First Name*</label>
+                        <input asp-for="Patient_FirstName" class="form-control" type="text" id="txtcapital" />
+                        <span asp-validation-for="Patient_FirstName" class="text-danger"></span>
+                    </div>
+
+                    @*Patient Last Name*@                    
+                    <div class="col-6">
+                        <label asp-for="Patient_LastName" class="control-label">Last Name*</label>
+                        <input asp-for="Patient_LastName" class="form-control" type="text" id="txtcapital2" />
+                        <span asp-validation-for="Patient_LastName" class="text-danger"></span>
+                    </div>
+
+
+                    @*Patient Preferred Name*@
+                    <fieldset class="col-sm-6">
+                        <legend class="col-form-label col-sm-12 pt-0" style="margin-left:-14px">Do you have a preferred name?</legend>
+                      
+                        <div class="form-inline col-sm-12" style="margin-left:-13px">
+                            <div class="form-group" style="margin-top:5px">                                
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="PreferredName" id="preferredYes" value="Yes">
+                                    <label class="form-check-label" for="preferredYes">Yes</label>                                   
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" asp-for="Patient_PreferredName" name="PreferredName" id="preferredNo" value="No">
+                                    <label class="form-check-label" for="preferredNo">No</label>
+                                </div>
+                            </div>
+                            @*If patient has a preferred name & selects 'yes', a text box will appear*@
+                            <div class="form-group" id='displayTextBox' style='display:none; width:200px; margin-left: 11px'>
+                                <input asp-for="Patient_PreferredName" type="text" class="form-control preferredName" type="text" id="txtcapital3" >
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+
+                    @*Patient date of birth*@
+                    <div class="col-6">
+                        <label asp-for="Patient_DOB" class="control-label">Date of Birth</label>
+                        <input asp-for="Patient_DOB" type="date" asp-format="{0:dd/MM/yyyy}" class="form-control" />
+                    </div>
+
+                    @*Patient Sex*@
+                    <fieldset class="col-sm-4" style="margin-left:-12px">
+                        <legend class="col-form-label col-sm-2 pt-0">Sex</legend>
+                        <div class="col-sm-8">
+                            @Html.RadioButtonFor(m => m.Patient_Sex, "Male") Male
+                            @Html.RadioButtonFor(m => m.Patient_Sex, "Female") Female
+                        </div>
+                    </fieldset>
+
+                    @*Patient Pronouns*@
+                    @*Multi select field*@
+                    <div class="row col-md-4 Patient_Pronouns" style="margin-top:18px; margin-left:-82px; width:36%">
+                        <label asp-for="Patient_Pronouns" class="control-label">Pronouns</label>
+                        <textarea asp-for="Patient_Pronouns" id="pronounIDs" hidden></textarea>
+                        <select id="pronouns" multiple ></select>
+                    </div>
+
+                    <h5 class="emergContact">Guardian  </h5>
+                    <p class="guardianOptional">(optional)</p>
+                                     
+                    @*Guardian Full Name*@
+                    <div class="col-12">
+                        <label asp-for="Patient_GuardianName" class="control-label" >Full Name</label>
+                        <input asp-for="Patient_GuardianName" class="form-control" type="text" id="txt_firstCapital" />
+                    </div>
+
+                    @*Guardian Phone Number*@
+                    <div class="col-6">
+                        <label asp-for="Patient_GuardianPhoneNumber" class="control-label">Phone Number</label>
+                        <input asp-for="Patient_GuardianPhoneNumber" id="phoneField4" class="form-control" />
+                    </div>
+
+                    @*Guardian Relationship to Patient*@
+                    <div class="col-md-6">
+                        <label asp-for="Patient_GuardianRelationship" class="control-label">Relationship</label>
+                        <select asp-for="Patient_GuardianRelationship" id="inputRace" class="form-select">
+                            <option selected>Select</option>
+                            <option value="Spouse">Spouse</option>
+                            <option value="Partner">Partner</option>
+                            <option value="Child">Child</option>
+                            <option value="Mother">Mother</option>
+                            <option value="Father">Father</option>
+                            <option value="Brother">Brother</option>
+                            <option value="Sister">Sister</option>
+                            <option value="Grandparent">Grandparent</option>
+                            <option value="Legal Guardian">Legal Guardian</option>
+                            <option value="Aunt">Aunt</option>
+                            <option value="Uncle">Uncle</option>
+                            <option value="Friend">Friend</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <hr style="margin-top:41px; margin-bottom: -3px" />
+                    <h5 class="emergContact">Tracking</h5>
+
+
+                    <!--Reason-->
+                    <div class="row col-md-12 Track_Reason" style="margin-top:18px; width:36%; margin-left: -9px">
+                        <label asp-for="Track_Reason" class="control-label">Reason*</label>
+                        <textarea asp-for="Track_Reason" id="reasonIDs" hidden ></textarea>
+                        <select id="reason" multiple></select>
+                        <span asp-validation-for="Track_Reason" class="text-danger"></span>
+                    </div>
+
+
+                    <!--Chief Complaint-->
+                    <div class="form-group row assessGroup col-md-6" style="margin-top:35px; margin-left:3px">
+                        <label asp-for="Track_ChiefComplaint" class="control-label" style="margin-left:-10px">Chief Complaint*</label>
+                        <select asp-for="Track_ChiefComplaint" class="form-select" style="width: 265px;">
+                            <option value="">Select</option>
+                            <option value="Detox">Detox</option>
+                            <option value="Information Only">Information Only</option>
+                            <option value="IOP">IOP</option>
+                            <option value="Mental Health">Mental Health</option>
+                            <option value="Res-CD">Res-CD</option>                            
+                        </select> 
+                        <span asp-validation-for="Track_ChiefComplaint" class="text-danger"></span>                       
+                    </div>
+              
+
+
+
+
+                    <!--Arrival Type-->
+                    <fieldset class="col-sm-6" style="margin-top:41px">
+                        <legend class="col-form-label col-sm-7 pt-0">Arrival Type*</legend>
+                        <div class="col-sm-12">
+                            @Html.RadioButtonFor(m => m.Track_ArrivalType, "Walk-in", new { id = "Walkin", name = "Track_ArrivalType" }) <label>Walk-in</label>
+                            @Html.RadioButtonFor(m => m.Track_ArrivalType, "Step Up", new { id = "Walkin", name = "Track_ArrivalType", @class="arriveType"  }) <label>Step Up</label>
+                            @Html.RadioButtonFor(m => m.Track_ArrivalType, "Transfer", new { id = "Transfer", name = "Track_ArrivalType", @class="arriveType"  }) <label>Transfer</label>
+                            @Html.RadioButtonFor(m => m.Track_ArrivalType, "Phone", new { id = "Transfer", name = "Track_ArrivalType", @class="arriveType"  }) <label>Phone</label>
+                            
+                        </div>  
+                         <span asp-validation-for="Track_ArrivalType" class="text-danger"></span>
+                    </fieldset>
+
+                   @*If radio button Walk-in or Step Up is selected, display fields: Initial Arrival, Arrival Mode, & Admission Type, *@
+                        <div id='show-walk' style="display:none;" class="col-md-12">
+
+
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label asp-for="Track_InitialArrival" style="margin-left:6px;" class="control-label">Arrival Time*</label>
+                                    <input type="checkbox" class="form-check-input" id="NewArrivalCheckBox" style="margin-top:38px; margin-left:13%">
+                                    <p id="InitialcheckboxClick" style="margin-left: -14px; font-style: italic; font-size: 11px; margin-top: 4px;">Check box to add date/time</p>
+                                    @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                                    {
+                                        <textarea asp-for="Track_InitialArrival" style="resize: none; height: 37px; width: 183px; overflow: hidden; margin-left: 6px; border: 1px solid #ced4da; padding: 0.375rem 1.25rem 0.375rem 0.74rem; border-radius:0.25rem" id="lblNewArriveDateTime" class="hide"></textarea>
+                                    }
+                                    else
+                                    {
+                                        <textarea readonly asp-for="Track_InitialArrival" style="resize: none; height: 37px; width: 183px; margin-left: 6px; overflow: hidden" id="lblNewArriveDateTime" class="hide"></textarea>
+                                    }   
+                                   <p id="agree_chk_error" hidden>Error</p>
+                                   
+                                </div> 
+                               
+
+
+                                <div class="form-group col-md-4" style="margin-left:-34px">
+                                    <label asp-for="Track_ArrivalMode" class="control-label" style="margin-left:2px; margin-left:4px">Arrival Mode*</label>
+                                    <select asp-for="Track_ArrivalMode" id="inputMode" class="form-select">
+                                        <option value="">Select</option>
+                                        <option value="Car">Car</option>
+                                        <option value="EMT">EMT</option>
+                                        <option value="Police">Police</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                   <label id="arrModeError"/>
+                                </div>
+
+
+                                <div class="form-group col-md-4" style="margin-left:20px">
+                                    <label asp-for="Track_AdmissionType" class="control-label">Admission Type*</label>
+                                    <select asp-for="Track_AdmissionType" id="addmissionType" class="form-select" style="width: 241px;">
+                                        <option value="">Select</option>
+                                        <option value="Voluntary">Voluntary</option>
+                                        <option value="Involuntary">Involuntary</option>
+                                    </select>
+                                    <label id="admitTypeError"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        @*If radio button Transfer or Phone is selected, display Received referral field*@
+                        <div id='show-transfer' style='display:none'>
+                            <!--Received Referral-->
+                            <div class="col-md-4" style="margin-top:18px">
+                                <label asp-for="Track_ReceivedReferral" class="control-label">Received Referral*</label>
+                               @*Display Checkbox to populate current date and time*@
+                                <input type="checkbox" class="form-check-input" id="ReceivedReferralCheckBox" style="margin-top:38px; margin-left:5px">
+                               <p id="ReferralcheckboxClick" style="margin-left: -14px; font-style: italic; font-size: 11px; margin-top: 4px;">Check box to add date/time</p>
+                                
+                               @*If user type is 1:Admin or 4: Sub Admin, Display datetime in text field that can be edited*@
+                               @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                                {
+                                    <textarea asp-for="Track_ReceivedReferral" style="resize:none; height: 37px; width:183px; overflow:hidden" id="lblReceivedReferralDateTime" class="hide"></textarea>
+                                }
+
+                                @*If user is not Admin or Sub Admin, display datetime in a readonly text field*@
+                                else
+                                {
+                                    <textarea readonly asp-for="Track_ReceivedReferral" style="resize:none; height: 37px; width:183px; overflow:hidden" id="lblReceivedReferralDateTime" class="hide"></textarea>
+                                }
+                            </div>
+                        </div>
+
+                    <div class="newPatientBtns">
+                        <input type="submit" value="Submit" id="submitNewPatient" class="submitPatientBtn" />
+                        <a class="cancelPatientBtn" asp-action="PatientData">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>
+</html>
+
+}
+
+@*If user does not have access to this page, display error message*@
+else
+{
+<div>
+     <div style="margin-left:44%; margin-top:8%">
+
+      <div class='error-circle'>
+        <div style="font-family: sans-serif;">X</div>
+      </div>
+
+      <h3 style="text-align:center; font-size:29px; margin-left:-84%; font-family: sans-serif;">Access Denied</h3>
+      <p style="text-align:center; margin-left: -83%; font-size: 19px; font-family: sans-serif;">You do not have permission to view this page.</p>
+      <p style="text-align:center; margin-left: -83%; font-size: 19px; font-family: sans-serif;">Please check your credentials and try again</p>
+    </div>
+</div>
+}

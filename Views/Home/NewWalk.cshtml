@@ -1,0 +1,202 @@
+﻿@*FRONT DESK - WALK-IN OR STEP UP ARRIVALS*@
+
+@model MedTimers.Models.AllEdit
+
+
+@{
+    ViewData["Title"] = "MedTimers";
+    Layout = "";
+
+}
+<link rel="shortcut icon" href="~/Images/clock.PNG" />
+<link rel="stylesheet" href="~/css/StyleSheet.css"/>
+
+@*User access based on account type
+    1 - Administrator
+    5 - Front Desk   
+*@
+@if (ViewBag.userType == "5" || ViewBag.userType == "1")
+{
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+        <script src="https://code.jquery.com/jquery-migrate-3.3.2.js"></script>
+
+        <!--BOOTSTRAP-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!--Fonts-->
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+               
+        <!--Message popups-->
+        <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+
+        <script src="~/js/Lobby.js"></script>
+        <link rel="stylesheet" media="screen and (max-width: 1300px)" href="~/css/SmallScreen/site.css" />
+        <link rel="stylesheet" media="screen and (max-width: 1300px)" href="~/css/SmallScreen/Lobby.css" />
+
+        <link rel="stylesheet" media="screen and (min-width: 1301px)" href="~/css/Widescreen/site.css" />
+        <link rel="stylesheet" media="screen and (min-width: 1301px)" href="~/css/Widescreen/Lobby.css" />
+
+
+    </head>
+
+    <body>
+
+        @*Default datetime for time stamps *@
+        @{ 
+            DateTime date = new DateTime(2000, 01, 01, 12, 0, 0);
+        }
+
+
+        <div class="row headTitle">
+            <div class="col-sm-12 titlebox" style="background-color:#43444D; ">
+                
+                @*Application title*@                
+                <p class="medTitle">MedTimers</p>
+
+            </div>
+        </div>
+
+
+        <div class="patientContainer">
+            <div class="row">
+                <div class="col-4 newPatient">
+                    <div class="container-fluid">
+                        <h4 class="newPatientTitle">Walk-in or Step Up</h4>
+
+                        <p style="margin-top: -33px; margin-left: 84%; margin-bottom: 33px;">*required fields</p>
+
+                        <div class="col-md-4">
+                            @*Add new patient form*@
+                            <form asp-controller="Home" asp-action="NewWalk" method="post" id="AddPatientForm" autocomplete="off">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                                @*Patient First Name*@
+                                <div class="row mb-3">
+                                     <div class="col-12" style="margin-bottom: 3%;">
+                                        <label asp-for="Patient_FirstName" class="control-label">First Name*</label>
+                                        <input asp-for="Patient_FirstName" class="form-control" required type="text" id="txtcapital" />
+                                        <span asp-validation-for="Patient_FirstName" class="text-danger"></span>
+                                    </div>
+
+                                    @*Patient Last Name*@
+                                    <div class="col-12" style="margin-bottom: 3%;">
+                                        <label asp-for="Patient_LastName" class="control-label">Last Name*</label>
+                                        <input asp-for="Patient_LastName" class="form-control" required type="text" id="txtcapital2"/>
+                                        <span asp-validation-for="Patient_LastName" class="text-danger"></span>
+                                    </div>
+
+
+                        @*Patient Preferred Name*@
+                        <div class="row mb-3" style="margin-left: -21px; margin-top: 3%;">
+                              <fieldset class="row mb-3">
+                                <legend class="col-form-label col-sm-8 pt-0">Preferred Name</legend>
+                                <div class="col-sm-4" style="margin-left: -85px; margin-top: 6px;">
+                                  <div class="form-check form-check-inline" style="margin-left: 11px;">
+                                    <input class="form-check-input" type="radio" name="PreferredName" id="preferredYes" value="Yes">
+                                    <label class="form-check-label" style="margin-top: -4px;" for="preferredYes">Yes</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" asp-for="Patient_PreferredName" name="PreferredName" id="preferredNo" value="No">
+                                    <label class="form-check-label" style="margin-top: -4px;" for="preferredNo">No</label>
+                                  </div>
+                                  @*If patient has a preferred name & selects 'yes', a text box will appear*@
+                                  <div class="form-group" id='displayTextBox' style='display:none; width:200px; margin-left: -226px; margin-top: 7px;'>
+                                    <input asp-for="Patient_PreferredName" type="text" class="form-control preferredName" type="text" id="txtcapital3">
+                                  </div>
+                                </div>
+                              </fieldset>
+                        </div>
+
+
+                        @*Patient Sex*@
+                       <div class="row mb-3" style="margin-left: -26px;">
+                          <fieldset class="row mb-3" style="margin-left: 6px;">
+                            <legend class="col-form-label col-sm-6 pt-0">Sex</legend>
+                            <div class="col-sm-6" style="margin-left: -21px;">
+                              <div class="form-check form-check-inline" style="font-size: 17px;">
+                               @Html.RadioButtonFor(m => m.Patient_Sex, "Male") Male
+                              </div>
+                              <div class="form-check form-check-inline" style="font-size: 17px; margin-left: -32px;">
+                                @Html.RadioButtonFor(m => m.Patient_Sex, "Female") Female
+                              </div>
+
+                            </div>
+                          </fieldset>
+                        </div>
+
+                        @*Patient Arrival Type*@
+                         <div class="row mb-3" style="margin-left: -26px;">
+                          <fieldset class="row mb-3" style="margin-left: 6px;">
+                            <legend class="col-form-label col-sm-6 pt-0">Arrival Type</legend>
+                            <div class="col-sm-7" style="margin-left: -40px;">
+                              <div class="form-check form-check-inline" style="font-size: 17px;">
+                               @Html.RadioButtonFor(m => m.Track_ArrivalType, "Walk-in") Walk-in
+                              </div>
+                              <div class="form-check form-check-inline" style="font-size: 17px; margin-left: -32px;">
+                                @Html.RadioButtonFor(m => m.Track_ArrivalType, "Step Up") Step Up
+                              </div>
+
+                            </div>
+                          </fieldset>
+                        </div>
+
+                     </div>
+
+                                @*Patient Initial Arrival Time*@
+                                <div class="row mb-3" style="margin-top: -25px;">
+                                    <label name="Track_InitialArrival" class="col-sm-6 col-form-label" for="gridCheck1">Arrival Time*</label>
+                                    <div class="col-sm-6" style="margin-left: -50px;">
+
+                                        @*Display Checkbox to populate current date and time*@
+                                        <input type="checkbox" class="form-check-input" id="ArrivalCheckBox" style="margin-top: 14px;" required>
+                                         <p id="ArrivalcheckboxClick" style="margin-left: 29px; font-style: italic; font-size: 14px; margin-top: -19px;">Check box to add date/time</p>
+                                        <textarea readonly name="Track_InitialArrival" style="resize:none; height: 37px; width:176px; overflow:hidden; text-align:center; padding:6px; font-size: 15px;" id="lblTransferArrivalDateTime" class="hide"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="NewWalkBtns">
+                                    <button id="submitLobby" type="submit" class="btn btn-dark lobbyPatientSubmitBtn"  style="width: 29%; background-color: #43444D;">Submit</button>                                    
+                                    <a class="lobbyPatientCancelBtn" asp-action="Lobby">Cancel</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!--Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
+    </body>
+</html>
+}
+
+@*If user does not have access to this page, display error message*@
+else
+{
+<div style="margin-left:44%; margin-top:8%">
+
+  <div class='error-circle'>
+    <div style="font-family: sans-serif;">X</div>
+  </div>
+
+  <h3 style="text-align:center; font-size:29px; margin-left:-84%; font-family: sans-serif;">Access Denied</h3>
+  <p style="text-align:center; margin-left: -83%; font-size: 19px; font-family: sans-serif;">You do not have permission to view this page.</p>
+  <p style="text-align:center; margin-left: -83%; font-size: 19px; font-family: sans-serif;">Please check your credentials and try again</p>
+</div>
+}

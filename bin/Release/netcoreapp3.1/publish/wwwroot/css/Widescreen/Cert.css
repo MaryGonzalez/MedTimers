@@ -1,0 +1,216 @@
+﻿.medTitle {
+    color: white;
+    font-size: 40px;
+    display: block;
+    margin-left: 800px;
+    margin-top: 13px;
+    padding-bottom: 12px;
+}
+
+.certData {
+    padding-top: 0px !important;
+    padding-left: 491px;
+}
+
+.certTable {
+    padding-top: 0px !important;
+    padding-left: 507px;
+}
+
+.certContainer{
+    padding-top: -20px;
+}
+/*Radio btn label*/
+label {
+    font-size: 14px;
+}
+
+.editRadio{
+    margin-top: 5px;
+}
+
+/*Radio checked*/
+.form-check-input:checked {
+    background-color: #43444D;
+    border-color: #43444D;
+}
+
+#EditCert {
+    width: 500px;
+    background-color: white;
+    padding: 48px 100px 40px 40px;
+    margin-left: 644px;
+}
+
+hr {
+    width: 78%;
+    margin-left: 69px;
+    margin-bottom: 45px;
+}
+
+.userTitle {
+    margin-left: 120px;
+    font-weight: normal;
+    font-size: 30px;
+}
+
+.certTextArea{
+    width: 400px;
+    margin-left: 10px;
+}
+
+.submitEditCert {
+    background-color: #43444D;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 85px;
+    margin-bottom: 24px;
+    margin-top: 20px;
+}
+
+.CancelEditCert {
+    background-color: white;
+    border: 1px solid #43444D;
+    color: #43444D;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 14px;
+    margin-bottom: 24px;
+    margin-top: 20px;
+}
+
+.acctBtns {
+    margin-top: 33px;
+}
+
+.certTitle {
+    background-color: #43444D;
+    color: white;
+    padding: 16px;
+    width: 457px;
+    margin-left: -15px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+
+
+
+.editCert {
+    padding-left: 5px;
+    /*padding-top: 100px;*/
+}
+
+.pageTitle {
+    width: 372px;
+}
+
+.table {
+    background-color: white;
+    margin-left: 0px;
+    width: 100%;
+    max-width: 100%;
+}
+
+td {
+    text-align: center;
+}
+
+th {
+    text-align: center;
+}
+
+.userLinks1 {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    float: left;
+}
+
+
+.userLinks2 {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    float: right;
+    margin-right: 15px;
+}
+
+.editCertBtn{
+    background-color:white;
+    border:none;
+}
+
+
+/*Home, Transfers, Cert, Accounts & Reports buttons*/
+.userBtn {
+    background-color: #43444D;
+    color: white;
+    border: none;
+}
+
+.tableCert {
+    margin-left: 0px !important;
+    width: 553px !important;
+    max-width: 766px !important;
+}
+
+/*Search bar*/
+.certSearch {
+    overflow: hidden;
+    background-color: #43444D;
+    width: 766px;
+}
+
+    .certSearch a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 30px;
+    }
+
+    .certSearch .search-container {
+        float: right;
+        margin-left: 40px;
+    }
+
+    .certSearch input[type=text] {
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+        margin-top: 15px;
+        margin-right: 10px;
+        float: right;
+    }
+
+#userInput {
+    float: right;
+}
+
+
+.certSearch .search-container button:hover {
+    background: #ccc;
+}
+
+.medTitleCert {
+    color: white;
+    font-size: 40px;
+    display: block;
+    margin-left: 43%;
+    margin-top: 13px;
+    padding-bottom: 12px;
+}

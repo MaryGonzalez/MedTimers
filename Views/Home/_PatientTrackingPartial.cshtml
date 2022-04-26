@@ -1,0 +1,1267 @@
+﻿
+
+@*PATIENT EDIT - TRACKING PAGE*@
+
+
+@model MedTimers.Models.AllEdit
+<link rel="shortcut icon" href="~/Images/clock.PNG" />
+<link rel="stylesheet" href="~/css/StyleSheet.css"/>
+
+@*User access based on account type
+    1 - Administrator
+    2 - Nurse
+    3 - Assessor
+    4 - Sub Administrator
+*@
+@if (ViewBag.userType == "1" || ViewBag.userType == "2" || ViewBag.userType == "3" || ViewBag.userType == "4")
+    {
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+@*Reason multi select*@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+
+<link rel="stylesheet" href="~/css/Transfers.css"/>
+<script src="~/js/Transfers.js"></script>
+<script src="~/js/MultiSelect.js"></script>
+
+
+<style>
+    /*Nurse*/
+    .nurseBox {
+        width: 50.1% !important;
+        margin-left: 118px !important;
+    }
+
+    .nurseWideS {
+        margin-left: 4% !important;
+    }
+
+    .nurseLabel {
+        margin-left: -2px !important;
+    }
+
+   
+</style>
+
+@*Display Patient's full name*@
+@if (Model.Patient_PreferredName == "" && Model.Patient_PreferredName != null)
+{
+    <input asp-for="fullName" disabled class="form-control fullName" />
+}
+else
+@*Display full name and preferred name*@
+{
+    <input asp-for="fullPreferredName" disabled class="form-control fullName" style="margin-left:39%" />
+}
+
+
+
+
+
+<div class="containerAdmin" style="max-width:none">
+
+    @*Default DateTime*@
+    @{
+    DateTime date = new DateTime(2000, 1, 1, 12, 0, 0);
+}
+
+
+
+    <div class="containerTracking">
+        <div class="row">
+            <div class="col-sm-4 row1">
+
+
+                <div class="form-group row mb-3 arrivalType">
+
+
+                    <!--Arrival Time-->
+                    <label asp-for="Track_InitialArrival" class="col-sm-6 control-label arrtimeWideS">Arrival Time</label>
+                    @*Display Arrival Time if it is not equal to minimum value or default date*@
+                    @if (Model.Track_InitialArrival != DateTime.MinValue && Model.Track_InitialArrival != date)
+                    {
+                        <div class="col-sm-6">
+                            @*If user type is 1:Admin or 4: Sub Admin
+                                Display datetime in text field that can be edited
+                            *@
+                            @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                            {
+                                <input asp-for="Track_InitialArrival" type="datetime"  class="form-control arrivalWideS" style="width: 195px; margin-left: -23%;" />
+                                @*<input class="form-control" asp-for="Track_InitialArrival"  asp-format="{0:yyyy-MM-ddTHH:mm}" style="width: 195px; margin-left: 13%;"/>*@
+                            
+                            }
+                            else
+                            @*If user is not Admin or Sub Admin, display datetime in a readonly text field*@
+                            {
+                                <input asp-for="Track_InitialArrival" readonly type="datetime" class="form-control arrivalWideS" style="border: none; margin-left: 30px; margin-left: -4px;" />
+                                @*<input readonly class="form-control" asp-for="Track_InitialArrival"  asp-format="{0:yyyy-MM-ddTHH:mm}" style="width: 195px; margin-left: 13%;"/>*@
+                            }
+                        </div>
+                        <span asp-validation-for="Track_InitialArrival" class="text-danger"></span>
+                    }
+                </div>
+
+              
+                <!--Reason-->
+                @*Multi select field*@
+                <div class="row col-md-12 Track_Reason" style="margin-top:18px">
+                    <label asp-for="Track_Reason" class="control-label col-sm-6 reasWideS">Reason</label>
+                    <div class="col-sm-6 reasonSelect" style="margin-bottom:16px; margin-left:-31px">
+                        <textarea asp-for="Track_Reason" id="reasonIDs" hidden></textarea>
+                        <select id="reason" multiple>
+                           @*Populate all Reasons into select field*@
+                            @foreach (var reas in ViewBag.allReasons)
+                            {
+                                if (ViewBag.reasons.ToString().Contains(reas))
+                                {
+                                    <option selected="selected" value="@reas">@reas</option>
+                                }
+                                else
+                                {
+                                    <option value="@reas">@reas</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <span asp-validation-for="Track_Reason" class="text-danger"></span>
+                </div>
+
+
+                <!--Arrival Mode-->
+                <div class="row col-md-12" style="margin-bottom: 14px;">
+                    <label asp-for="Track_ArrivalMode" class="col-sm-5 control-label modeWideS">Arrival Mode</label>
+                    <div class="col-sm-7 arrivalModeS">
+                        <select asp-for="Track_ArrivalMode" class="col-sm-7 selectpicker" style="width: 178px;" data_live_search="false">
+                            <option selected>Select</option>
+                            <option value="Car">Car</option>
+                            <option value="EMT">EMT</option>
+                            <option value="Police">Police</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <span asp-validation-for="Track_ArrivalMode" class="text-danger"></span>
+                </div>
+
+
+
+
+                <!--Arrival Type-->
+                <div class="row col-md-12" style="margin-bottom: 14px;">
+                    <label asp-for="Track_ArrivalType" class="col-sm-5 control-label typeWideS">Arrival Type</label>
+                    <div class="col-sm-7 AtypeWideS">
+                        <select asp-for="Track_ArrivalType" class="col-sm-7 selectpicker" style="width: 178px;" data_live_search="false">
+                            <option>Select</option>
+                            <option value="Walk-in">Walk-in</option>
+                            <option value="Phone">Phone</option>
+                            <option value="Step Up">Step Up</option>
+                            <option value="Transfer">Transfer</option>
+                        </select>
+                    </div>
+                    <span asp-validation-for="Track_ArrivalType" class="text-danger"></span>
+                </div>
+
+
+
+                <!--Chief Complaint-->
+                <div class="row col-md-12" style="margin-bottom: 14px;">
+                    <label asp-for="Track_ChiefComplaint" class="col-sm-5 control-label chiefWideS">Chief Complaint</label>
+                    <div class="col-sm-7 chiefWideScreen">
+                        <select asp-for="Track_ChiefComplaint" class="col-sm-7 selectpicker" style="width: 178px;" data_live_search="false">
+                            <option selected>Select</option>
+                            <option value="Detox">Detox</option>
+                            <option value="Information Only">Information Only</option>
+                            <option value="IOP">IOP</option>
+                            <option value="Mental Health">Mental Health</option>
+                            <option value="Phone Assessment">Phone Assessment</option>
+                            <option value="Res-CD">Res-CD</option>
+                        </select>
+                    </div>
+                    <span asp-validation-for="Track_ChiefComplaint" class="text-danger"></span>
+                </div>
+
+                 <!--Admission Type-->
+                <div class="form-group row adminType" style="margin-top: 20px;">
+                    <label asp-for="Track_AdmissionType" class="col-sm-4 col-form-label">Admission Type</label>
+                    <div class="col-sm-8">
+                        <div class="row">
+                            <div class="col-sm-12" style="margin-top: 5px; margin-left: 33px; margin-bottom:25px">
+                                @Html.RadioButtonFor(m => m.Track_AdmissionType, "Voluntary") Voluntary
+                                @Html.RadioButtonFor(m => m.Track_AdmissionType, "Involuntary") Involuntary
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!--Triage Level-->
+                <div class="form-group row triageWide">
+                    <label asp-for="Track_TriageLevel" class="col-sm-4 col-form-label triWideS">Triage</label>
+                    <div class="col-sm-8 trigWideS">
+                        <div class="row">
+                            <div class="col-sm-12 triLW" style="margin-top: 5px; margin-left: 33px; margin-bottom:25px">
+                                @Html.RadioButtonFor(m => m.Track_TriageLevel, "Low") Low
+                                @Html.RadioButtonFor(m => m.Track_TriageLevel, "Medium") Medium
+                                @Html.RadioButtonFor(m => m.Track_TriageLevel, "High") High
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                 <!--SBAR Called-->
+                 @*Display SBAR Call Time if it is not equal to minimum value or default date*@
+                @if (Model.Track_SBARCall != DateTime.MinValue && Model.Track_SBARCall != date)
+                {
+                    <div class="row mb-3">
+                        <label asp-for="Track_SBARCall" class="col-sm-6 control-label sbarWideS">SBAR Called</label>
+                        <div class="col-sm-6">
+                            @*If user type is 1:Admin or 4: Sub Admin
+                                Display datetime in text field that can be edited
+                            *@
+                            @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                            {                                
+                                <input asp-for="Track_SBARCall" type="datetime" class="form-control" style="width: 183px; margin-left: -34px;" />
+                                @*<input class="form-control" asp-for="Track_SBARCall"  asp-format="{0:yyyy-MM-ddTHH:mm}" style="width: 73%;"/>*@
+                            }
+                            else
+                            @*If user is not Admin or Sub Admin, display datetime in a readonly text field*@
+                            {
+                                <input asp-for="Track_SBARCall" readonly type="datetime" class="form-control" style="border: none; margin-left: -4px;" /> 
+                                @*<input readonly class="form-control" asp-for="Track_SBARCall"  asp-format="{0:yyyy-MM-ddTHH:mm}" style="width: 73%;" />*@
+                            }
+                        </div>
+                        <span asp-validation-for="Track_SBARCall" class="text-danger"></span>
+                    </div>
+
+                }
+                else
+                {
+                    <div class="row mb-3 sbarWidth">
+                        <label asp-for="Track_SBARCall" class="col-sm-5 control-label">SBAR Called</label>
+                        <div class="col-sm-7 sbarWide">
+                            @*Display Checkbox to populate current date and time*@
+                            <input type="checkbox" class="form-check-input" id="SBARCheckBox">
+                            <p id="SBARcheckboxClick" style="margin-left: 18px; font-style: italic; font-size: 11px; margin-top: 4px;">Check box to add date/time</p>
+
+                            @*If user type is 1:Admin or 4: Sub Admin
+                                Display datetime in text field that can be edited
+                            *@
+                            @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                            {                                
+                                <textarea asp-for="Track_SBARCall" style="resize:none; height: 37px; width:183px; overflow:hidden" id="lblSBARDateTime" class="form-control hide"></textarea> 
+                                @*<input class="form-control" id="sbarDateTime" value="2016/02/25 18:30" asp-for="Track_SBARCall" style="width: 71%;" class="hide sbarDisp" />*@
+                                @*<input type="datetime-local" asp-for="Track_SBARCall" id="sBARDatetimeField" class="form-control hide sbarDisp"/>*@
+                            }
+                            else
+                            @*If user is not Admin or Sub Admin, display datetime in a readonly text field*@
+                            {
+                                 <textarea readonly asp-for="Track_SBARCall" style="resize: none; height: 37px; width: 183px; overflow: hidden; margin-left: 30px; border: none;" id="lblSBARDateTime" class="form-control hide"></textarea>
+                                @*<input readonly class="form-control" id="lblSBARDateTime" asp-for="Track_SBARCall"  asp-format="{0:yyyy-MM-ddTHH:mm}" style="width: 71%;" class="form-control hide sbarDisp" />*@
+                                @*<input readonly type="datetime-local" asp-for="Track_SBARCall" id="sBARDatetimeField" class="form-control hide sbarDisp"/>*@
+                            }
+                        </div>
+                        <span asp-validation-for="Track_SBARCall" class="text-danger"></span>
+                    </div>
+                }
+
+
+
+            </div>
+            <div class="col-1" style="padding: 0px; width: 10px;">@*extra div*@</div>
+            <div class="verticalTracking"></div>
+            <div class="col-1" style="padding: 0px; width: 10px;">@*extra div*@</div>
+
+
+
+
+
+            <div class="col-sm-4 row2">
+
+
+                <!--Nurse-->              
+                <div class="row mb-3 nurseWideS">
+                    <label asp-for="NurseID" class="col-sm-3 control-label nurseLabel">Nurse</label>
+                    <div class="col-sm-7 nurseBox">
+                        <select class="dropdowns nurseWide" data-val="true" data-val-required="The NurseID field is required." id="NurseID" name="NurseID">
+                            @foreach (var nurse in ((List<System.Web.Mvc.SelectListItem>)ViewBag.allNurses))
+                            {
+                                if (ViewBag.nurseID.ToString() == nurse.Value)
+                                {
+                                    <option selected="selected" value="@nurse.Value">@nurse.Text</option>
+                                }
+                                else
+                                {
+                                    <option value="@nurse.Value">@nurse.Text</option>
+                                }
+                            }
+                        </select>
+                     </div>
+                    <span asp-validation-for="NurseID" class="text-danger"></span>
+                </div>
+
+
+
+                <!--MSE Assessment Start-->
+                @*Display MSE Start Time if it is not equal to minimum value or default date*@
+                @if (Model.Track_MSEStart != DateTime.MinValue && Model.Track_MSEStart != date)
+                {
+                    <div class="row mb-3">
+                        <label asp-for="Track_MSEStart" class="col-sm-6 control-label MSESWideS">MSE Assessment Start</label>
+                        <div class="col-sm-6 mseSCheckW">
+                            @*If user type is 1:Admin or 4: Sub Admin
+                                Display datetime in text field that can be edited
+                            *@
+                            @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                            {
+                                <input asp-for="Track_MSEStart" type="datetime" class="form-control" style="width: 198px; margin-left: -31px;" />
+                                @*<input asp-for="Track_MSEStart" type="datetime" class="form-control mseAssessS mseDisp" style="width: 198px; margin-left: -31px;" />*@
+                                @*<input class="form-control" asp-for="Track_MSEStart" class="form-control mseAssessS mseDisp"  asp-format="{0:yyyy-MM-ddTHH:mm}" style="margin-left: -12px;"/>*@
+                            }
+                            else
+                            @*If user is not Admin or Sub Admin, display datetime in a readonly text field*@
+                            {
+                                <input asp-for="Track_MSEStart" readonly type="datetime" class="form-control" style="border:none" />
+                                @*<input asp-for="Track_MSEStart" readonly type="datetime" class="form-control mseDisp" style="border:none" />*@
+                                @*<input readonly class="form-control" asp-for="Track_MSEStart" class="form-control mseAssessS mseDisp"  asp-format="{0:yyyy-MM-ddTHH:mm}" style="margin-left: -12px;"/>*@
+                            }
+                        </div>
+                        <span asp-validation-for="Track_MSEStart" class="text-danger"></span>
+                    </div>
+
+                }
+                else
+                {
+                    <div class="row mb-3">
+                        <label asp-for="Track_MSEStart" class="col-sm-6 control-label MSESCheckWLabel">MSE Assessment Start</label>
+                        <div class="col-sm-6 MSESCheckW" >
+                            @*Display Checkbox to populate current date and time*@
+                            <input type="checkbox" class="form-check-input" id="MSEStartCheckBox">
+                            <p id="MSEScheckboxClick" style="margin-left: -14px; font-style: italic; font-size: 11px; margin-top: 4px;">Check box to add date/time</p>
+                           
+                            @*If user type is 1:Admin or 4: Sub Admin
+                                Display datetime in text field that can be edited
+                            *@
+                            @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                            {
+                                <textarea asp-for="Track_MSEStart" style="resize:none; height: 37px; width:183px; overflow:hidden;  margin-left:-24px" id="lblMSEStartDateTime" class="form-control hide"></textarea>
+                                @*<textarea asp-for="Track_MSEStart" style="resize:none; height: 37px; width:183px; overflow:hidden;  margin-left:-24px" id="lblMSEStartDateTime" class="form-control hide"></textarea>*@
+                                @*<input type="datetime-local" asp-for="Track_MSEStart" id="MSESDatetimeField" class="form-control mseStart"/>*@
+                            }
+                            else
+
+                             @*If user type is 1:Admin or 4: Sub Admin
+                                Allow editing on datetime
+                            *@
+                            {
+                                <textarea readonly asp-for="Track_MSEStart" style="resize: none; height: 25px; width: 183px; overflow: hidden; border: none; margin-left: 30px" id="lblMSEStartDateTime" class="form-control hide"></textarea>
+                                @*<textarea readonly asp-for="Track_MSEStart" style="resize: none; height: 25px; width: 183px; overflow: hidden; border: none; margin-left: 30px" id="lblMSEStartDateTime" class="form-control hide mseStart"></textarea>*@
+                                @*<input readonly type="datetime-local" asp-for="Track_MSEStart" id="MSESDatetimeField" class="form-control" style=margin-left: 23px !important;"/>*@
+                            }
+                        </div>
+                        <span asp-validation-for="Track_MSEStart" class="text-danger"></span>
+                    </div>
+                }
+
+
+                <!--MSE Assessment End-->
+                @*Display MSE End Time if it is not equal to minimum value or default date*@
+                @if (Model.Track_MSEEnd != DateTime.MinValue && Model.Track_MSEEnd != date)
+                {
+                    <div class="row mb-3">
+                        <label asp-for="Track_MSEEnd" class="col-sm-5 control-label MSEEWideS">MSE Assessment End</label>
+                        <div class="col-sm-7 mseEndW">
+                              @*If user type is 1:Admin or 4: Sub Admin
+                                Display datetime in text field that can be edited
+                            *@
+                            @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                            {
+
+                                <input asp-for="Track_MSEEnd" type="datetime" class="form-control mseEndWide" style="margin-left: 2px; width: 197px;" />
+                                @*<input class="form-control" asp-for="Track_MSEEnd"  asp-format="{0:yyyy-MM-ddTHH:mm}" style="margin-left: 2px; width: 247px;"/>*@
+
+                            }
+                            @*If user is not Admin or Sub Admin, display datetime in a readonly text field*@
+                            else
+                            {
+                                <input asp-for="Track_MSEEnd" readonly type="datetime" class="form-control" style="border: none; margin-left: 32px" />
+                                @*<input readonly class="form-control" asp-for="Track_MSEEnd"  asp-format="{0:yyyy-MM-ddTHH:mm}" style="margin-left: 2px; width: 246px;"/>*@
+                            }
+                        </div>
+                        <span asp-validation-for="Track_MSEEnd" class="text-danger"></span>
+                    </div>
+
+                }
+                else
+                {
+                    <div class="row mb-3 MSEEnd">
+                        <label asp-for="Track_MSEEnd" class="col-sm-5 control-label">MSE Assessment End</label>
+                        <div class="col-sm-7 EndWideS">
+                             @*Display Checkbox to populate current date and time*@
+                            <input type="checkbox" class="form-check-input" id="MSEEndCheckBox">
+                             <p id="MSEEcheckboxClick" style="margin-left: 18px; font-style: italic; font-size: 11px; margin-top: 4px;">Check box to add date/time</p>
+                            
+                             @*If user type is 1:Admin or 4: Sub Admin
+                                Display datetime in text field that can be edited
+                            *@
+                             @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                            {
+                                <textarea asp-for="Track_MSEEnd" style="resize:none; height: 25px; width:183px; overflow:hidden" id="lblMSEEndDateTime" class="form-control hide mseEndDisp"></textarea>
+                                @*<input type="datetime-local" asp-for="Track_MSEEnd" id="MSEEDatetimeField" class="form-control mseEndDisp"/>*@
+                            }
+
+                             @*If user type is 1:Admin or 4: Sub Admin
+                                Allow editing on datetime
+                            *@
+                            else
+                            {
+                                <textarea readonly asp-for="Track_MSEEnd" style="resize: none; height: 25px; width: 183px; border: none; overflow: hidden; margin-left: 65px;" id="lblMSEEndDateTime" class="form-control hide mseEndDisp"></textarea>
+                                @*<input readonly type="datetime-local" asp-for="Track_MSEEnd" id="MSEEDatetimeField" class="form-control mseEndDisp"/>*@
+                            
+                            }
+                        </div>
+                        <span asp-validation-for="Track_MSEEnd" class="text-danger"></span>
+                    </div>
+                }
+
+
+                <hr class="lineTracking1" />
+
+
+                <!--Assessment Start-->
+                 @*Display Assessment Start Time if it is not equal to minimum value or default date*@
+                @if (Model.Assessment_StartTime != DateTime.MinValue && Model.Assessment_StartTime != date)
+                {
+                    <div class="row mb-3">
+                        <label asp-for="Assessment_StartTime" class="col-sm-6 control-label assessmentLabel">Assessment Start</label>
+                        <div class="col-sm-6 assessStart">
+
+                            @*If user type is 1:Admin or 4: Sub Admin
+                                Display datetime in text field that can be edited
+                            *@
+                            @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                            {
+                                <input asp-for="Assessment_StartTime" type="datetime" class="form-control assessSInput" style="width:118%; margin-left:-19%" />
+                                 @*<input class="form-control assessSInput" asp-for="Assessment_StartTime"  asp-format="{0:yyyy-MM-ddTHH:mm}" style="width:118%; margin-left:-19%"/>*@
+                            }
+                            else
+                            @*If user is not Admin or Sub Admin, display datetime in a readonly text field*@
+                            {
+                                <input asp-for="Assessment_StartTime" readonly type="datetime" class="form-control" style="border:none" />
+                                @*<input readonly class="form-control assessSInput" asp-for="Assessment_StartTime"  asp-format="{0:yyyy-MM-ddTHH:mm}" style="width:118%; margin-left:-19%" />*@
+                            }
+                        </div>
+                        <span asp-validation-for="Assessment_StartTime" class="text-danger"></span>
+                    </div>
+
+                }
+                else
+                {
+                    <div class="row mb-3 assessStartW">
+                        <label asp-for="Assessment_StartTime" class="col-sm-6 control-label">Assessment Start</label>
+                        <div class="col-sm-6 assessmentStartW" >
+                            @*Display Checkbox to populate current date and time*@
+                            <input type="checkbox" class="form-check-input" id="AssessStartCheckBox">
+                             <p id="AssessSScheckboxClick" style="margin-left: -14px; font-style: italic; font-size: 11px; margin-top: 4px;">Check box to add date/time</p>
+                           
+                             @*If user type is 1:Admin or 4: Sub Admin
+                                Display datetime in text field that can be edited
+                            *@
+                             @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                            {
+                                <textarea asp-for="Assessment_StartTime" style="resize: none; height: 21px; width: 183px; overflow: hidden;" id="lblAssessStartDateTime" class="form-control hide assessStartDisp"></textarea>
+                                @*<input type="datetime-local" asp-for="Assessment_StartTime" id="AssessSDatetimeField" class="form-control assessStartDisp"/>*@
+
+                            }
+
+                             @*If user type is 1:Admin or 4: Sub Admin
+                                Allow editing on datetime
+                            *@
+                            else
+                            {
+                                <textarea readonly asp-for="Assessment_StartTime" style="resize: none; height: 21px; width: 183px; overflow: hidden; border: none; margin-left:30px" id="lblAssessStartDateTime" class="form-control hide assessStartDisp"></textarea>
+                                @*<input readonly type="datetime-local" asp-for="Assessment_StartTime" id="AssessSDatetimeField" class="form-control assessStartDisp"/>*@
+
+                            }
+                        </div>
+                        <span asp-validation-for="Assessment_StartTime" class="text-danger"></span>
+                    </div>
+                }
+
+                <!--Assessor-->                
+                <div class="row mb-3 assessorDropW">
+                    <label asp-for="AssessorID" class="col-sm-5 control-label">Assessor</label>
+                    <div class="col-sm-7 assessWideS">
+                        <select class="dropdowns" data-val="true" data-val-required="The AssessorID field is required." id="AssessorID" name="AssessorID">
+                            @foreach (var assessor in ((List<System.Web.Mvc.SelectListItem>)ViewBag.allAssessors))
+                            {
+                                if (ViewBag.assessorID.ToString() == assessor.Value)
+                                {
+                                    <option selected="selected" value="@assessor.Value">@assessor.Text</option>
+                                }
+                                else
+                                {
+                                    <option value="@assessor.Value">@assessor.Text</option>
+                                }
+
+                            }
+                        </select>
+                    </div>
+                    <span asp-validation-for="AssessorID" class="text-danger"></span>
+                </div>
+
+
+
+                <!--Assessment Room-->
+                <div class="form-group row assessmentW" style=" margin-top: 20px;">
+                    <label asp-for="Assessment_Room" class="col-sm-5 control-label assessmentRLabel">Assessment Room</label>
+                    <div class="col-sm-7">
+                        <select asp-for="Assessment_Room" class="col-sm-7 selectpicker assessmentDrop" data_live_search="false">
+                            <option selected>Select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="Sub">Sub</option>
+                            <option value="Lobby">Lobby</option>
+                            <option value="Phone">Phone</option>
+                        </select>
+                    </div>
+                    <span asp-validation-for="Assessment_Room" class="text-danger"></span>
+                </div>
+
+                <!--Assessment End-->
+                @*Display Assessment End Time if it is not equal to minimum value or default date*@
+                @if (Model.Assessment_EndTime != DateTime.MinValue && Model.Assessment_EndTime != date)
+                {
+                    <div class="row mb-3 assessEWide" style="margin-top: 17px;">
+                        <label asp-for="Assessment_EndTime" class="col-sm-5 control-label">Assessment End</label>
+                        <div class="col-sm-7 MSEEW">
+
+                            @*If user type is 1:Admin or 4: Sub Admin
+                                Display datetime in text field that can be edited
+                            *@
+                            @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                            {
+                                <input asp-for="Assessment_EndTime" type="datetime" class="form-control assessMentE" margin-left:32px" />
+                                @*<input class="form-control assessMentE" asp-for="Assessment_EndTime"  asp-format="{0:yyyy-MM-ddTHH:mm}" style="margin-left:32px" />*@
+                            }
+
+                            @*If user is not Admin or Sub Admin, display datetime in a readonly text field*@
+                            else
+                            {
+                                <input asp-for="Assessment_EndTime" readonly type="datetime" class="form-control assessMentE" style="border: none; margin-left: 32px" />
+                                @*<input readonly class="form-control assessMentE" asp-for="Assessment_EndTime"  asp-format="{0:yyyy-MM-ddTHH:mm}" style="margin-left:32px" />*@
+                            }
+                        </div>
+                        <span asp-validation-for="Assessment_EndTime" class="text-danger"></span>
+                    </div>
+
+                }
+                else
+                {
+                    <div class="row mb-3 assessmentEndW" style="margin-top: 17px;">
+                        <label asp-for="Assessment_EndTime" class="col-sm-5 control-label">Assessment End</label>
+                        <div class="col-sm-7 assessmentEndW">
+                             @*Display Checkbox to populate current date and time*@
+                            <input type="checkbox" class="form-check-input" id="AssessEndCheckBox">
+                            <p id="AssessEcheckboxClick" style="margin-left: 17px; font-style: italic; font-size: 11px; margin-top: 4px;">Check box to add date/time</p>
+                            
+                            @*If user type is 1:Admin or 4: Sub Admin
+                                Display datetime in text field that can be edited
+                            *@
+                            @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                            {
+                                <textarea asp-for="Assessment_EndTime" style="resize:none; height: 25px; width:183px; overflow:hidden" id="lblAssessEndDateTime" class="form-control hide assessEndDisplay"></textarea>
+                                @*<input type="datetime-local" asp-for="Assessment_EndTime" id="AssessEDatetimeField" class="form-control assessEndDisplay"/>*@
+
+                            }
+
+                             @*If user type is 1:Admin or 4: Sub Admin
+                                Allow editing on datetime
+                            *@
+                            else
+                            {
+                                <textarea readonly asp-for="Assessment_EndTime" style="resize: none; height: 25px; width: 183px; overflow: hidden; border: none; margin-left: 60px;" id="lblAssessEndDateTime" class="form-control hide assessEndDisplay"></textarea>
+                                @*<input readonly type="datetime-local" asp-for="Assessment_EndTime" id="AssessEDatetimeField" class="form-control assessEndDisplay"/>*@
+
+                            }
+                        </div>
+                        <span asp-validation-for="Assessment_EndTime" class="text-danger"></span>
+                    </div>
+                }
+
+
+                <hr class="lineTracking1" />
+
+
+                <div class="form-group row" style="margin-top: 20px;">
+
+
+                    <!--Emergency Medical Condition-->
+                    <label asp-for="Track_EmergencyMedCondition" class="col-sm-7 col-form-label medWideS">Emergency Medical Condition</label>
+                    <div class="col-sm-5">
+                        <div class="row">
+                            <div class="col-sm-12 emcWide" style="margin-top: 5px; margin-left: 48px;">
+                                @Html.RadioButtonFor(m => m.Track_EmergencyMedCondition, "Yes") Yes
+                                @Html.RadioButtonFor(m => m.Track_EmergencyMedCondition, "No") No
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--Cert Status-->
+                    <label asp-for="Track_CertStatus" style="margin-top: 16px;" class="col-sm-4 col-form-label">Cert Status</label>
+                    <div class="col-sm-8">
+                        <div class="row">
+                            <div class="col-sm-12 certStatW" style="margin-top: 25px; margin-left: 66px;">
+                                @Html.RadioButtonFor(m => m.Track_CertStatus, "Complete") Complete
+                                @Html.RadioButtonFor(m => m.Track_CertStatus, "Deferred") Deferred
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+            <div class="col-1" style="padding: 0px; width: 10px;"><!--extra div--></div>
+            <div class="verticalTracking2"></div>
+            <div class="col-1" style="padding: 0px; width: 10px;"><!--extra div--></div>
+
+
+            <div class="col-sm-4 row3 col3WideS">
+
+
+
+                <!--Arrival to Disposition-->
+                @*Display Arrival to Disposition Time if it is not equal to minimum value or default date*@
+                @if (Model.Track_DispositionArrival != DateTime.MinValue && Model.Track_DispositionArrival != date)
+                {
+                    <div class="row mb-3 dispWide">
+                        <label asp-for="Track_DispositionArrival" class="col-sm-5 control-label ">Arrival to Disposition</label>
+                        <div class="col-sm-4 datetimeField" style="width: 200px">
+                            
+                            @*If user type is 1:Admin or 4: Sub Admin
+                                Display datetime in text field that can be edited
+                            *@
+                            @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                            {
+                                <input asp-for="Track_DispositionArrival" type="datetime" class="form-control" />
+                                @*<input class="form-control" asp-for="Track_DispositionArrival"  asp-format="{0:yyyy-MM-ddTHH:mm}"/>*@
+                            }
+
+                             @*If user is not Admin or Sub Admin, display datetime in a readonly text field*@
+                            else
+                            {
+                                <input asp-for="Track_DispositionArrival" readonly type="datetime" class="form-control" />
+                                @*<input readonly class="form-control" asp-for="Track_DispositionArrival"  asp-format="{0:yyyy-MM-ddTHH:mm}"/>*@
+                            }
+
+
+                        </div>
+                        <span asp-validation-for="Track_DispositionArrival" class="text-danger"></span>
+                    </div>
+
+                }
+                else
+                {
+                    <div class="row mb-3">
+                        <label asp-for="Track_DispositionArrival" class="col-sm-5 control-label arrivalDispLW">Arrival to Disposition</label>
+                        <div class="col-sm-4 dispW" style="width: 200px">
+                             @*Display Checkbox to populate current date and time*@
+                            <input type="checkbox" class="form-check-input" id="ArrivalDispCheckBox">
+                             <p id="DispAcheckboxClick" style="margin-left: 10px; font-style: italic; font-size: 11px; margin-top: 4px;">Check box to add date/time</p>
+                           
+                             @*If user type is 1:Admin or 4: Sub Admin
+                                Display datetime in text field that can be edited
+                            *@
+                             @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                            {
+                                <textarea asp-for="Track_DispositionArrival" style="resize:none; height: 37px; width:183px; overflow:hidden" id="lblArrivalDispDateTime" class="form-control hide arrDisp"></textarea>
+                                @*<input type="datetime-local" asp-for="Track_DispositionArrival" id="dispArrDatetimeField" class="form-control arrDisp"/>*@
+
+                            }
+
+                             @*If user type is 1:Admin or 4: Sub Admin
+                                Allow editing on datetime
+                            *@
+                            else
+                            {
+                                <textarea readonly asp-for="Track_DispositionArrival" style="resize: none; height: 37px; width: 183px; overflow: hidden; border: none; margin-left: 40px;" id="lblArrivalDispDateTime" class="form-control hide arrDisp"></textarea>
+                                @*<input readonly type="datetime-local" asp-for="Track_DispositionArrival" id="dispArrDatetimeField" class="form-control arrDisp"/>*@
+
+                            }
+
+                        </div>
+                        <span asp-validation-for="Track_DispositionArrival" class="text-danger"></span>
+                    </div>
+                }
+
+                <!--Disposition Type-->
+                <div class="form-group row" style=" margin-top: 20px;">
+                    <label asp-for="Track_DispositionType" class="col-sm-3 control-label dispLW">Disposition</label>
+                    <div class="col-sm-4 dispType" style="width: 200px;">
+                        <select asp-for="Track_DispositionType" class="col-sm-4 selectpicker dispAW" data_live_search="false">
+                            <option selected>Select</option>
+                            <option value="Admitted">Admitted</option>
+                            <option value="CoMo Tx">CoMo Tx</option>
+                            <option value="Information Only">Information Only</option>
+                            <option value="IOP">IOP</option>
+                            <option value="Med Tx">Med Tx</option>
+                            <option value="PO Assessment">PO Assessment</option>
+                            <option value="Referred Elsewhere">Referred Elsewhere</option>
+                            <option value="Refusal">Refusal</option>
+                           
+                        </select>
+                    </div>
+                    <span asp-validation-for="Track_DispositionType" class="text-danger"></span>
+                </div>
+
+                <!--Time Patient Went to Unit-->
+                @*Display Patient Went to Unit Time if it is not equal to minimum value or default date*@
+                @if (Model.Track_PatientWentToUnit != DateTime.MinValue && Model.Track_PatientWentToUnit != date)
+                {
+                    <div class="row mb-3 unitW" style="margin-top: 20px">
+                        <label asp-for="Track_PatientWentToUnit" class="col-sm-5 control-label ">Patient Went to Unit</label>
+                        <div class="col-sm-5 datetimeField" style="width:200px">
+                            
+                              @*If user type is 1:Admin or 4: Sub Admin
+                                Display datetime in text field that can be edited
+                            *@
+                            @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                            {
+                                <input asp-for="Track_PatientWentToUnit" type="datetime" class="form-control unitDisplay"/>
+                                @*<input class="form-control" asp-for="Track_PatientWentToUnit"  asp-format="{0:yyyy-MM-ddTHH:mm}" class="form-control unitDisplay"/>*@
+                            }
+
+                            @*If user is not Admin or Sub Admin, display datetime in a readonly text field*@                            
+                            else
+                            {
+                                <input asp-for="Track_PatientWentToUnit" readonly type="datetime" class="form-control" style="border:none" />
+                                @*<input readonly class="form-control" asp-for="Track_PatientWentToUnit"  asp-format="{0:yyyy-MM-ddTHH:mm}"/>*@
+                            }
+
+                        </div>
+                        <span asp-validation-for="Track_PatientWentToUnit" class="text-danger"></span>
+                    </div>
+                }
+                else
+                {
+                    <div class="row mb-3" style="margin-top: 20px">
+                        <label asp-for="Track_PatientWentToUnit" class="col-sm-5 control-label patientUnitLW">Patient Went to Unit</label>
+                        <div class="col-sm-5 patientUnitW" style="margin-left: 2px; width:200px">
+                             @*Display Checkbox to populate current date and time*@
+                            <input type="checkbox" class="form-check-input" id="ToUnitCheckBox">
+                             <p id="UnitcheckboxClick" style="margin-left: 10px; font-style: italic; font-size: 11px; margin-top: 4px;">Check box to add date/time</p>
+                           
+                               @*If user type is 1:Admin or 4: Sub Admin
+                                Display datetime in text field that can be edited
+                            *@
+                             @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                            {
+                                <textarea asp-for="Track_PatientWentToUnit" style="resize:none; height: 25px; width:183px; overflow:hidden" id="lblToUnitDateTime" class="form-control hide patientDisp"></textarea>
+                                 @*<input type="datetime-local" asp-for="Track_PatientWentToUnit" id="patientUnitDatetimeField" class="form-control patientDisp"/>*@
+                            }
+
+                            @*If user is not Admin or Sub Admin, display datetime in a readonly text field*@                            
+                            else
+                            {
+                                <textarea readonly asp-for="Track_PatientWentToUnit" style="text-align: right; resize: none; height: 25px; width: 171px; overflow: hidden; border: none; margin-left: 33px; " id="lblToUnitDateTime" class="form-control hide patientDisp"></textarea>
+                                 @*<input readonly type="datetime-local" asp-for="Track_PatientWentToUnit" id="patientUnitDatetimeField" class="form-control patientDisp"/>*@
+                            }
+
+
+
+                        </div>
+                        <span asp-validation-for="Track_PatientWentToUnit" class="text-danger"></span>
+                    </div>
+                }
+
+
+
+
+
+                <hr class="lineTracking2" />
+
+
+                <!--Departure Mode-->
+                <div class="form-group row" style=" margin-top: 20px;">
+                    <label asp-for="Track_DepartureMode" class="col-sm-5 control-label depModeLW">Departure Mode</label>
+                    <div class="col-sm-4 depModeW" style=" width: 200px;">
+                        <select asp-for="Track_DepartureMode" class="col-sm-4 selectpicker departureModeW" style="margin-left:2px" data_live_search="false">
+                            <option selected>Select</option>
+                            <option value="Admitted">Admitted</option>
+                            <option value="Car">Car</option>
+                            <option value="EMT">EMT</option>
+                            <option value="Police">Police</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <span asp-validation-for="Track_DepartureMode" class="text-danger"></span>
+                </div>
+
+
+
+                <!--Departure Time-->
+                @*Display Departure Time if it is not equal to minimum value or default date*@
+                @if (Model.Track_DepartureTime != DateTime.MinValue && Model.Track_DepartureTime != date)
+                {
+                    <div class="row mb-3 " style="margin-top: 20px">
+                        <label asp-for="Track_DepartureTime" class="col-sm-5 control-label deptTimeWideLabel">Departure Time</label>
+                        <div class="col-sm-4 datetimeField" style="width:200px">
+                            
+                            @*If user type is 1:Admin or 4: Sub Admin
+                                Display datetime in text field that can be edited
+                            *@
+                            @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                            {
+                                <input asp-for="Track_DepartureTime" type="datetime" class="form-control deptTimeW" />
+                                @*<input class="form-control deptTimeW" asp-for="Track_DepartureTime"  asp-format="{0:yyyy-MM-ddTHH:mm}"/>*@
+                            }
+
+                            @*If user is not Admin or Sub Admin, display datetime in a readonly text field*@
+                            else
+                            {
+                                <input asp-for="Track_DepartureTime" readonly type="datetime" class="form-control" style="border:none" />
+                                @*<input readonly class="form-control deptTimeW" asp-for="Track_DepartureTime"  asp-format="{0:yyyy-MM-ddTHH:mm}" />*@
+                            }
+                        </div>
+                        <span asp-validation-for="Track_DepartureTime" class="text-danger"></span>
+                    </div>
+                }
+                else
+                {
+                    <div class="row mb-3 deptWide" style="margin-top: 20px">
+                        <label asp-for="Track_DepartureTime" class="col-sm-5 control-label">Departure Time</label>
+                        <div class="col-sm-4 departTimeW" style="width:200px">
+                            @*Display Checkbox to populate current date and time*@
+                            <input type="checkbox" class="form-check-input" id="DepartTimeCheckBox">
+                             <p id="DepartcheckboxClick" style="margin-left: 10px; font-style: italic; font-size: 11px; margin-top: 4px;">Check box to add date/time</p>
+                           
+                             @*If user type is 1:Admin or 4: Sub Admin
+                                Display datetime in text field that can be edited
+                            *@
+                            @if (ViewBag.userType == "1" || ViewBag.userType == "4")
+                            {
+                                <textarea asp-for="Track_DepartureTime" style="resize:none; height: 25px; width:183px; overflow:hidden" id="lblDepartTimeDateTime" class="form-control hide deptTimeDisp"></textarea>
+                                 @*<input type="datetime-local" asp-for="Track_DepartureTime" id="departureDatetimeField" class="form-control deptTimeDisp"/>*@
+                            }
+
+                            @*If user is not Admin or Sub Admin, display datetime in a readonly text field*@
+                            else
+                            {
+                                <textarea readonly asp-for="Track_DepartureTime" style="resize: none; height: 25px; width: 183px; overflow: hidden; border: none; margin-left: 40px;" id="lblDepartTimeDateTime" class="form-control hide deptTimeDisp"></textarea>
+                                 @*<input readonly type="datetime-local" asp-for="Track_DepartureTime" id="departureDatetimeField" class="form-control deptTimeDisp"/>*@
+                            }
+                        </div>
+                        <span asp-validation-for="Track_DepartureTime" class="text-danger"></span>
+                    </div>
+                }
+
+
+                <hr class="lineTracking2" />
+
+                @*Comments about the patient*@
+                <div class="form-group row commentsWideS" id="commentsTracking">
+                    <label asp-for="Track_Comments" class="col-sm-12 form-label" style="text-align:left">Comments</label>
+                    <div class="col-sm-12 commentsW">
+                        <textarea asp-for="Track_Comments" class="form-control" style="resize:none" id="commentArea" rows="6"></textarea>
+                        @*Character counter, max character 250*@
+                        <div hidden class="character-counter-wrapper"><span class="character-counter counter">0</span> characters typed</div>
+                        <div style="float:right" class="characters-remaining-wrapper"><span class="characters-remaining counter">250</span> characters left</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>     
+</div>
+}
+
+@*If user does not have access to this page, display error message*@
+else
+{
+  <div style="margin-left:44%; margin-top:8%">
+
+  <div class='error-circle'>
+    <div style="font-family: sans-serif;">X</div>
+  </div>
+
+  <h3 style="text-align:center; font-size:29px; margin-left:-84%; font-family: sans-serif;">Access Denied</h3>
+  <p style="text-align:center; margin-left: -83%; font-size: 19px; font-family: sans-serif;">You do not have permission to view this page.</p>
+  <p style="text-align:center; margin-left: -83%; font-size: 19px; font-family: sans-serif;">Please check your credentials and try again</p>
+  <br>
+  <a style="text-align:center; margin-left: 4%; font-size: 19px; font-family: sans-serif;" href="https://medtimers.cphmo.net/home/login">Login</a>
+</div>
+}
+
+@*
+<script>
+     $("#sBARDatetimeField").hide();
+    $("#MSESDatetimeField").hide();
+    $("#MSEEDatetimeField").hide();
+    $("#AssessSDatetimeField").hide();
+    $("#AssessEDatetimeField").hide();
+    $("#dispArrDatetimeField").hide();
+    $("#patientUnitDatetimeField").hide();
+    $("#departureDatetimeField").hide();
+     $("#initArrvalDatetimeField").hide();
+
+
+     //PATIENT ARRIVAL//
+    //Date Time of patient arrival
+    $('#ArrivalCheckBox').change(function () {
+        if (this.checked) {
+            $("#ArrivalCheckBox").hide();           
+            ArriveTime();
+        }
+    }); 
+
+    //Date Time of patient arrival
+    function ArriveTime() {
+        var today = new Date();
+        var d = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
+        var date = new Date();
+        var hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+        var am_pm = date.getHours() >= 12 ? "PM" : "AM";
+        hours = hours < 10 ? "0" + hours : hours;
+        var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+        time = d + " " + hours + ":" + minutes + " " + am_pm;
+        var lblArriveDateTime = document.getElementById("lblArriveDateTime");
+        lblArriveDateTime.innerHTML = time;
+    }
+
+
+
+    //Date Time of Assessment Start
+    $('#ArrivalCheckBox2').change(function () {
+        if (this.checked) {
+            $("#ArrivalCheckBox2").hide();
+            $("#Arrival2checkboxClick").hide();            
+            ArriveTime2();
+        }
+    });
+
+    //Date Time of Assessment Start
+    function ArriveTime2() {
+        $("#initArrvalDatetimeField").show();
+        var now = new Date();
+        var utcString = now.toISOString().substring(0, 19);
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var localDatetime = year + "-" +
+            (month < 10 ? "0" + month.toString() : month) + "-" +
+            (day < 10 ? "0" + day.toString() : day) + "T" +
+            (hour < 10 ? "0" + hour.toString() : hour) + ":" +
+            (minute < 10 ? "0" + minute.toString() : minute)
+        var datetimeField = document.getElementById("initArrvalDatetimeField");
+        datetimeField.value = localDatetime;
+    }
+
+
+
+
+
+
+    //SBAR CALLED//
+    //Date Time of SBAR Called
+    $('#SBARCheckBox').change(function () {
+        if (this.checked) {
+            $("#SBARCheckBox").hide();
+            $("#SBARcheckboxClick").hide();
+            SBARTime();
+        }
+    });
+
+    //Date Time of SBAR Called
+    function SBARTime() {
+        $("#sBARDatetimeField").show();
+        
+        var now = new Date();
+        var utcString = now.toISOString().substring(0, 19);
+        var year = now.getFullYear(); 
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var localDatetime = year + "-" +
+            (month < 10 ? "0" + month.toString() : month) + "-" +
+            (day < 10 ? "0" + day.toString() : day) + "T" +
+            (hour < 10 ? "0" + hour.toString() : hour) + ":" +
+            (minute < 10 ? "0" + minute.toString() : minute)
+        var datetimeField = document.getElementById("sBARDatetimeField");
+        datetimeField.value = localDatetime;
+    }
+
+
+    //SBAR CALLED transfer page//
+    //Date Time of SBAR Called
+    $('#SBARCheckBox2').change(function () {
+        if (this.checked) {
+            $("#SBARCheckBox2").hide();
+            SBARTime2();
+        }
+    });
+
+    //Date Time of SBAR Called
+    function SBARTime2() {
+        $("#lblSBARDateTime2").show();
+        var today = new Date();
+        var d = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
+        var date = new Date();
+        var hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+        var am_pm = date.getHours() >= 12 ? "PM" : "AM";
+        hours = hours < 10 ? "0" + hours : hours;
+        var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+        time = d + " " + hours + ":" + minutes + " " + am_pm;
+        var lblSBARDateTime2 = document.getElementById("lblSBARDateTime2");
+        lblSBARDateTime2.innerHTML = time;
+    }
+
+
+
+
+    //MSE ASSESSMENT START//
+    //Date Time of MSE Assessment Start
+    $('#MSEStartCheckBox').change(function () {
+        if (this.checked) {
+            $("#MSEStartCheckBox").hide();
+            $("#MSEScheckboxClick").hide();            
+            MSEStartTime();
+        }
+    });
+
+    //Date Time of Assessment Start
+    function MSEStartTime() {
+
+        $("#MSESDatetimeField").show();
+
+        var now = new Date();
+        var utcString = now.toISOString().substring(0, 19);
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var localDatetime = year + "-" +
+            (month < 10 ? "0" + month.toString() : month) + "-" +
+            (day < 10 ? "0" + day.toString() : day) + "T" +
+            (hour < 10 ? "0" + hour.toString() : hour) + ":" +
+            (minute < 10 ? "0" + minute.toString() : minute)
+        var datetimeField = document.getElementById("MSESDatetimeField");
+        datetimeField.value = localDatetime;        
+    }
+
+
+
+
+    //MSE ASSESSMENT END
+    //Date Time of MSE Assessment End
+    $('#MSEEndCheckBox').change(function () {
+        if (this.checked) {
+            $("#MSEEndCheckBox").hide();
+            $("#MSEEcheckboxClick").hide();
+            MSEEndTime();
+        }
+    });
+
+    //Date Time of Assessment End
+    function MSEEndTime() {
+        $("#MSEEDatetimeField").show();
+
+        var now = new Date();
+        var utcString = now.toISOString().substring(0, 19);
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var hour = now.getHours();
+        var minute = now.getMinutes(); 
+        var localDatetime = year + "-" +
+            (month < 10 ? "0" + month.toString() : month) + "-" +
+            (day < 10 ? "0" + day.toString() : day) + "T" +
+            (hour < 10 ? "0" + hour.toString() : hour) + ":" +
+            (minute < 10 ? "0" + minute.toString() : minute)
+        var datetimeField = document.getElementById("MSEEDatetimeField");
+        datetimeField.value = localDatetime;
+    }
+
+
+
+
+    //ASSESSMENT START
+    //Date Time of Assessment Start
+    $('#AssessStartCheckBox').change(function () {
+        if (this.checked) {
+            $("#AssessStartCheckBox").hide();
+            $("#AssessSScheckboxClick").hide();
+            
+            AssessStartTime();
+        }
+    });
+
+    //Date Time of Assessment Start
+    function AssessStartTime() {
+        $("#AssessSDatetimeField").show();
+        var now = new Date();
+        var utcString = now.toISOString().substring(0, 19);
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var localDatetime = year + "-" +
+            (month < 10 ? "0" + month.toString() : month) + "-" +
+            (day < 10 ? "0" + day.toString() : day) + "T" +
+            (hour < 10 ? "0" + hour.toString() : hour) + ":" +
+            (minute < 10 ? "0" + minute.toString() : minute)
+        var datetimeField = document.getElementById("AssessSDatetimeField");
+        datetimeField.value = localDatetime;
+    }
+
+
+
+    //ASSESSMENT END
+    //Date Time of Assessment End
+    $('#AssessEndCheckBox').change(function () {
+        if (this.checked) {
+            $("#AssessEndCheckBox").hide();
+            $("#AssessEcheckboxClick").hide();            
+            AssessEndTime();
+        }
+    });
+
+    //Date Time of Assessment End
+    function AssessEndTime() {
+        $("#AssessEDatetimeField").show();
+        var now = new Date();
+        var utcString = now.toISOString().substring(0, 19);
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var localDatetime = year + "-" +
+            (month < 10 ? "0" + month.toString() : month) + "-" +
+            (day < 10 ? "0" + day.toString() : day) + "T" +
+            (hour < 10 ? "0" + hour.toString() : hour) + ":" +
+            (minute < 10 ? "0" + minute.toString() : minute)
+        var datetimeField = document.getElementById("AssessEDatetimeField");
+        datetimeField.value = localDatetime;
+    }
+
+
+    //ARRIVAL TO DISPOSITION
+    //Date Time of Arrival to Disposition
+    $('#ArrivalDispCheckBox').change(function () {
+        if (this.checked) {
+            $("#ArrivalDispCheckBox").hide();
+            $("#DispAcheckboxClick").hide();
+            ArrivalDispTime();
+        }
+    });
+
+    //Date Time of Arrival to Disposition
+    function ArrivalDispTime() {
+        $("#dispArrDatetimeField").show();
+
+        var now = new Date(); 
+        var utcString = now.toISOString().substring(0, 19);
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var localDatetime = year + "-" +
+            (month < 10 ? "0" + month.toString() : month) + "-" +
+            (day < 10 ? "0" + day.toString() : day) + "T" +
+            (hour < 10 ? "0" + hour.toString() : hour) + ":" +
+            (minute < 10 ? "0" + minute.toString() : minute)
+        var datetimeField = document.getElementById("dispArrDatetimeField");
+        datetimeField.value = localDatetime;
+    }
+
+
+
+    //PATIENT WENT TO UNIT
+    //Date Time of Patient Went To Unit
+    $('#ToUnitCheckBox').change(function () {
+        if (this.checked) {
+            $("#ToUnitCheckBox").hide();
+            $("#UnitcheckboxClick").hide();            
+            ToUnitTime();
+        }
+    });
+
+    //Date Time of Patient Went To Unit
+    function ToUnitTime() {
+        $("#patientUnitDatetimeField").show();
+        var now = new Date();
+        var utcString = now.toISOString().substring(0, 19);
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var localDatetime = year + "-" +
+            (month < 10 ? "0" + month.toString() : month) + "-" +
+            (day < 10 ? "0" + day.toString() : day) + "T" +
+            (hour < 10 ? "0" + hour.toString() : hour) + ":" +
+            (minute < 10 ? "0" + minute.toString() : minute)
+        var datetimeField = document.getElementById("patientUnitDatetimeField");
+        datetimeField.value = localDatetime;
+    }
+
+
+
+    //DEPARTURE TIME
+    //Date Time of Departure Time
+    $('#DepartTimeCheckBox').change(function () {
+        if (this.checked) {
+            $("#DepartTimeCheckBox").hide();
+            $("#DepartcheckboxClick").hide();            
+            DepartTime();
+        }
+    });
+
+    //Date Time of Departure Time
+    function DepartTime() {
+        $("#departureDatetimeField").show();
+
+        var now = new Date();
+        var utcString = now.toISOString().substring(0, 19);
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var localDatetime = year + "-" +
+            (month < 10 ? "0" + month.toString() : month) + "-" +
+            (day < 10 ? "0" + day.toString() : day) + "T" +
+            (hour < 10 ? "0" + hour.toString() : hour) + ":" +
+            (minute < 10 ? "0" + minute.toString() : minute)
+        var datetimeField = document.getElementById("departureDatetimeField");
+        datetimeField.value = localDatetime;
+    }
+
+
+</script>*@

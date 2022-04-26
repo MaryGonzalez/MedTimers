@@ -1,0 +1,94 @@
+﻿@*REPORTS*@
+@*ADMINISTRATOR ACCESS ONLY*@
+
+@model IEnumerable<MedTimers.Models.AllEdit>
+<link rel="stylesheet" href="~/css/StyleSheet.css"/>
+@{
+    //ViewData["Title"] = "MedTimers";
+    Layout = "";
+}
+<link rel="shortcut icon" href="~/Images/clock.PNG" />
+
+@*User access based on account type, 1:Administrator*@
+@if (ViewBag.userType == "1")
+{
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <link rel="stylesheet" media="screen and (max-width: 1300px)" href="~/css/SmallScreen/site.css" />
+        <link rel="stylesheet" media="screen and (max-width: 1300px)" href="~/css/SmallScreen/Reports.css" />
+
+        <link rel="stylesheet" media="screen and (min-width: 1301px)" href="~/css/Widescreen/Reports.css" />
+        <link rel="stylesheet" media="screen and (min-width: 1301px)" href="~/css/Widescreen/site.css" />
+    </head>
+    <body>
+
+        <div class="row headTitleAcct">
+            <div class="col-sm-12 titlebox" style="background-color:#43444D; ">
+                <div class="userLinks1">
+                    @*Link to Home page*@
+                    <span><button type="button" class="button button-small userBtn" onclick="location.href='@Url.Action("PatientData", "Home")'">Home</button></span> |
+                    
+                     @*Link to Transfers page*@
+                    <span><button type="button" class="button button-small userBtn" onclick="location.href='@Url.Action("Transfers", "Home")'">Transfers</button></span> |
+                    
+                     @*Link to Cert page*@
+                    <span><button type="button" class="button button-small userBtn" onclick="location.href='@Url.Action("Cert", "Home")'">Cert</button></span>
+                </div>
+
+
+                <div class="userLinks2">
+                     @*Link to Accounts page*@
+                    <span><button type="button" class="button button-small userBtn" onclick="location.href='@Url.Action("Accounts", "Home")'">Accounts</button></span> |
+                    
+                    @*Link to Reports page*@
+                    <span><button type="button" class="button button-small userBtn" onclick="location.href='@Url.Action("Reports", "Home")'">Reports</button></span>
+                </div>
+
+                @*Application title*@
+                <p class="medTitle MedTitleReports">MedTimers</p>
+
+            </div>
+        </div>
+
+        @*EMTALA Log*@
+        <!--Export Excel Button-->
+        <button type="button" class="button button-small reportsBtn" onclick="location.href='@Url.Action("ExportToExcelLobby", "Home")'">EMTALA Log</button>
+
+
+
+        @*All Data*@
+        <!--Export Excel Button-->
+        <button type="button" class="button button-small reportsBtn2" onclick="location.href='@Url.Action("ExportToExcelALL", "Home")'">Download All Data</button>
+
+    </body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="~/js/Reports.js"></script>
+<script src="~/js/site.js"></script>
+
+}
+
+@*If user does not have access to this page, display error message*@
+else
+{
+<div>
+     <div style="margin-left:44%; margin-top:8%">
+
+      <div class='error-circle'>
+        <div style="font-family: sans-serif;">X</div>
+      </div>
+
+      <h3 style="text-align:center; font-size:29px; margin-left:-84%; font-family: sans-serif;">Access Denied</h3>
+      <p style="text-align:center; margin-left: -83%; font-size: 19px; font-family: sans-serif;">You do not have permission to view this page.</p>
+      <p style="text-align:center; margin-left: -83%; font-size: 19px; font-family: sans-serif;">Please check your credentials and try again</p>
+    </div>
+</div>
+}

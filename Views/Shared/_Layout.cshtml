@@ -1,0 +1,148 @@
+﻿@model IEnumerable<MedTimers.Models.AllEdit>
+
+@{
+    ViewData["Title"] = "MedTimers";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="~/Images/MedTimer.png" />
+    <title>@ViewData["Title"] - MedTimers</title>
+    
+    <!--User Account Menu Caret-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--Modal-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+
+    <link rel="stylesheet" href="~/css/site.css" />
+
+</head>
+<body>
+    <header>
+
+
+
+
+
+        <div class="row headTitle">
+            <div class="col-sm-12" style="background-color:#43444D; ">
+                @*<div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">
+                        <div class="menu"></div>
+                        <div class="menu"></div>
+                        <div class="menu"></div>
+                    </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        @Html.ActionLink("Home", "PatientData")
+                        @Html.ActionLink("Transfers", "Transfers")
+                        @Html.ActionLink("Cert", "Cert")
+                    </div>
+                </div>*@
+
+                <p class="mainTitle">MedTimers</p>               
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <table class="table table-bordered" id="waitingTable">
+                        <thead>
+                            <tr>
+                                <th colspan="3" class="tableTitle">Ready Patients</th>
+                            </tr>
+                            <tr>
+                                <th scope="col" class="columnName">Name</th>
+                                <th scope="col" class="columnName wait">Wait Time</th>
+                                <th scope="col" class="columnName">Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Daniel Campbell</td>
+                                <td>20 Minutes</td>
+                                <td>Walk In</td>
+                            </tr>
+                            <tr>
+                                <td>Terry Nguyen</td>
+                                <td>15 Minutes</td>
+                                <td>Walk In</td>
+                            </tr>
+                            <tr>
+                                <td>Natalie Zerbe</td>
+                                <td>3 Minutes</td>
+                                <td>Transfer</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+                <div class="col-md">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <!--Patient Count Data-->
+                            <div class="col-sm-7">
+                                <div class="grid-container shadow-sm p-3 mb-5 bg-white rounded">
+
+                                    <div class="grid-child">
+                                        <button type="button" class="btn btn-link patientCount" onclick="location.href='@Url.Action("PatientData", "Home")'">Lobby</button>
+                                        <span>5</span>
+                                    </div>
+
+                                    <div class="grid-child">
+                                        <button type="button" class="btn btn-link patientCount" onclick="location.href='@Url.Action("Transfers", "Home")'">Transfers</button>
+
+                                        <span>2</span>
+                                    </div>
+
+                                    <div class="grid-child">
+                                        <button type="button" class="btn btn-link patientCount" onclick="location.href='@Url.Action("Cert", "Home")'">Cert</button>
+
+                                        <span>
+
+                                        </span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @*<footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2021 - TableTest - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>*@
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>*@
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

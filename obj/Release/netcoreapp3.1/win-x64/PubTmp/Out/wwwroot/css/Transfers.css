@@ -1,0 +1,2757 @@
+﻿body {
+    margin-bottom: 60px;
+    background-color: #EEEFE9;
+    /*padding-left: 30px;*/
+}
+
+p {
+    margin-bottom: 0rem;
+}
+
+
+.patientCount {
+    text-decoration: none;
+    color: #6B818C;
+    font-size: 30px;
+}
+
+    .patientCount:hover {
+        text-decoration: none;
+        color: #6B818C;
+        /*font-size: 35px;*/
+    }
+
+    .patientCount:focus {
+        text-decoration: none;
+        outline: none;
+    }
+
+    .patientCount:active {
+        text-decoration: none !important;
+        outline: none !important;
+    }
+
+.container {
+    padding-right: 15px;
+    /*padding-left: 0px;*/
+    margin-right: auto;
+    margin-left: 0px;
+    width: 100%;
+}
+
+.containerAdmin {
+    padding-right: 15px;
+    /*padding-left: 0px;*/
+    margin-right: auto;
+    margin-left: -253px;
+    width: 141%;
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+html {
+    font-size: 14px;
+}
+
+
+/*******MedTimers Title***********/
+.mainTitle {
+    background-color: #43444D;
+    color: #E1DADA;
+    font-size: 30px;
+    display: block;
+    margin-left: 848px;
+    margin-top: -55px;
+    margin-bottom: -51px;
+}
+
+
+.headTitle {
+    padding-bottom: 45px;
+}
+
+
+.userName {
+    color: #E1DADA;
+    font-size: 20px;
+    margin-right: 70px;
+    float: right;
+    margin-top: -50px;
+}
+
+/*******Lobby, Transfer, Cert Numbers********/
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background-color: #F4F5F2;
+    color: #6B818C;
+    background-position: 9px 0px;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    line-height: 18px;
+    overflow: hidden;
+    padding: 4px 6px;
+    /*width: 1750px;*/
+    margin-bottom: 3%;
+    font-size: 30px;
+    vertical-align: middle;
+    /*margin-left: 61px;*/
+    text-align: center;
+    height: 128px;
+}
+
+
+.grid-child span {
+    display: block;
+    padding: 10px;
+}
+
+
+
+/***********Page Title: Lobby**********/
+.pageTitle {
+    color: white;
+    background-color: #43444D;
+    height: 70px;
+    width: 1750px;
+    font-size: 35px;
+    padding-left: 16px;
+    padding-top: 7px;
+    /*margin-bottom: 7px;*/
+    margin-top: -14px;
+    position: relative;
+    display: inline-block;
+}
+
+
+/***********Entry Number DropDown******************/
+#PatientTable_length {
+    color: white;
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    margin-top: -50px;
+    margin-left: 160px;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    background-color: #43444D;
+    width: 60px;
+}
+
+/**********Search bar******************/
+#PatientTable_filter {
+    color: white;
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    /*  background-color: #43444D;*/
+    margin-right: 80px;
+    margin-top: -50px;
+}
+
+input[type=search] {
+    color: white;
+    margin-top: 8px;
+}
+
+/********Search bar & Entry Number Dropdown***********/
+label {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+
+/******DataTable Row*******/
+.row.content {
+    height: 1500px;
+    vertical-align: middle;
+    padding: 8px 17px 8px 17px;
+}
+
+/*Table row margin*/
+.row {
+    margin-left: 0px;
+}
+
+
+/**************DataTable*************/
+table.dataTable tbody td {
+    text-align: center;
+    padding: 15px 15px 15px 5px;
+}
+
+th {
+    font-weight: normal;
+    text-align: center;
+    width: 700px;
+    background-color: #B2C4CF;
+    color: white;
+    text-align: center;
+    top: 0;
+    position: sticky;
+    z-index: 1;
+}
+
+th, td {
+    white-space: nowrap;
+    margin: 0;
+}
+
+
+border
+table.dataTable.no-footer {
+    border-bottom: none;
+}
+
+
+.line-breaks {
+    white-space: pre-line;
+}
+
+.addUL {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*Behind button*/
+.addBtn {
+    text-align: center;
+    background: #EEEFE9;
+    height: 40px;
+    width: 40px;
+    margin-bottom: 5px;
+}
+
+    /*Button*/
+    .addBtn .addLI {
+        float: left;
+        font-size: 16px;
+        height: 35px;
+        line-height: 40px;
+        width: 35px;
+        border-radius: 20px;
+    }
+
+.add {
+    display: block;
+    font-weight: bold;
+    height: 40px;
+    transition: all .4s ease-in-out;
+}
+
+.plus {
+    background: #6B818C;
+    transition: all .4s ease-in-out;
+    color: white;
+}
+
+
+.open {
+    background: #f67;
+}
+
+.rotate {
+    -webkit-transform: rotate(45deg);
+}
+
+.btn .btn-text {
+    max-width: 0;
+    display: inline-block;
+    -webkit-transition: color .25s 1.5s, max-width 2s;
+    transition: color .25s 1.5s, max-width 2s;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    color: white;
+    padding: 0px;
+    width: 80px;
+}
+
+.btn:hover .btn-text,
+.btn:focus .btn-text {
+    max-width: 300px;
+    color: white;
+}
+
+
+/ /*User Account Drop Down Menu*/
+.acctdropbtn {
+    background-color: #43444D;
+    color: #E1DADA;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-top: -5px;
+}
+
+.acctdropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 11px;
+}
+
+.acctdropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #43444D;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .acctdropdown-content a {
+        color: #E1DADA;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+
+        .acctdropdown-content a:hover {
+            background-color: #F4F5F2;
+            color: black;
+        }
+
+.acctdropdown:hover .acctdropdown-content {
+    display: block;
+}
+
+.acctdropdown:hover .acctdropbtn {
+    background-color: #43444D;
+}
+
+
+/*Modal Settings Button*/
+.SettingsBtn {
+    color: #E1DADA;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+btn .SettingsBtn:hover {
+    color: green;
+}
+
+.tableTitle {
+    background-color: #43444D;
+    color: white;
+    text-align: center !important;
+}
+
+.columnName {
+    background-color: #B2C4CF;
+    color: white;
+    text-align: center;
+}
+
+.headTitle {
+    padding-bottom: 83px;
+}
+
+.medTitle {
+    color: white;
+    font-size: 40px;
+    display: block;
+    margin-left: 800px;
+    margin-top: 13px;
+    padding-bottom: 12px;
+}
+
+
+/*Table, Links, buttons*/
+.table {
+    background-color: white;
+    margin-left: -15px;
+    width: 402px;
+    max-width: 402px;
+}
+
+.userLinks1 {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    float: left;
+    margin-top: 20px;
+}
+
+
+.userLinks2 {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    float: right;
+    margin-top: 25px;
+}
+
+/*Home, Transfers, Cert, Accounts & Reports buttons*/
+.userBtn {
+    background-color: #43444D;
+    color: white;
+    border: none;
+}
+
+/*Space between tables*/
+.tableSpace {
+    background-color: #EEEFE9;
+    padding: 5px;
+    border: none !important;
+}
+
+.table thead th {
+    vertical-align: middle;
+}
+
+
+.homepageSearch a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.homepageSearch .search-container {
+    float: right;
+    margin-left: 40px;
+}
+
+.homepageSearch input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    margin-top: 15px;
+    margin-right: 10px;
+    float: right;
+    width: 368px;
+}
+
+#userInput {
+    float: right;
+}
+
+
+.homepageSearch .search-container button:hover {
+    background: #ccc;
+}
+
+
+
+.homepageData {
+    padding-top: 0px !important;
+    padding-left: 491px;
+}
+
+.homepageTable {
+    padding-top: 0px !important;
+    padding-left: 507px;
+}
+
+.homepageContainer {
+    padding-top: 20px;
+    margin-left: 90px;
+}
+
+.homepagetable {
+    background-color: white;
+    /*margin-left: -15px;*/
+    margin-left: 0px;
+    width: 402px;
+    max-width: 402px;
+}
+
+
+
+
+
+
+.container {
+    margin-top: 20px !important;
+    margin-bottom: 47px;
+}
+
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-right: 4px;
+    border: 1px solid #C8C9CA;
+    border-radius: 5px;
+}
+
+
+.triageLvl {
+    margin-left: 123px !important;
+    margin-bottom: 20px;
+}
+
+.sBarGroup {
+    margin-bottom: 20px;
+}
+
+
+
+.group10Space {
+    margin-bottom: 20px;
+}
+
+#comments {
+    margin-right: 21px;
+}
+
+
+.dispArrive {
+    margin-bottom: 16px;
+}
+
+.dispType {
+    margin-bottom: 11px;
+    margin-left: 59px !important;
+}
+
+
+.MSEStart {
+    margin-left: -6px !important;
+    margin-bottom: 17px;
+}
+
+.MSEEnd {
+    margin-bottom: 17px;
+}
+
+.lblDateTime {
+    text-align: left;
+    margin-left: 13px;
+}
+
+.SpaceData {
+    margin-bottom: 22px;
+}
+
+
+#departureTime {
+    width: 3px;
+}
+
+#actionsection {
+    margin-left: 74px;
+}
+
+.table {
+    background-color: white;
+    /*margin-left: -15px;*/
+    margin-left: 0px;
+    width: 402px;
+    max-width: 402px;
+}
+
+.userLinks1 {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    float: left;
+}
+
+
+.userLinks2 {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    float: right;
+}
+
+/*Home, Transfers, Cert, Accounts & Reports buttons*/
+.userBtn {
+    background-color: #43444D;
+    color: white;
+    border: none;
+}
+
+.newAccountTitle {
+    background-color: #43444D;
+    color: white;
+    padding: 16px;
+    width: 402px;
+    margin-left: -15px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+
+#AddNewAccount {
+    width: 500px;
+    background-color: white;
+    padding: 48px 100px 40px 40px;
+}
+
+hr {
+    width: 74%;
+    margin-left: 81px;
+    margin-bottom: 45px;
+}
+
+.hospital {
+    width: 74%;
+    margin-left: 87px;
+    margin-bottom: 19px;
+}
+
+
+.userTitle {
+    margin-left: 35%;
+    font-weight: normal;
+    font-size: 30px;
+    width: 100%;
+}
+
+.userTitlePhone {
+    margin-left: 20%;
+    font-weight: normal;
+    font-size: 30px;
+    width: 100%;
+}
+
+.userTitleExtension {
+    margin-left: 18%;
+    font-weight: normal;
+    font-size: 30px;
+    width: 100%;
+}
+
+.submitNewAcct {
+    background-color: #43444D;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 85px;
+    margin-bottom: 24px;
+    margin-top: 20px;
+}
+
+.CancelNewAcct {
+    background-color: white;
+    border: 1px solid #43444D;
+    color: #43444D;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 14px;
+    margin-bottom: 24px;
+    margin-top: 20px;
+}
+
+.acctBtns {
+    margin-top: 33px;
+}
+
+.editCertBtn {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+}
+
+
+
+/*TABLES*/
+.row {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+    /* Clearfix (clear floats) */
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: center;
+    padding: 16px;
+}
+
+
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+#waitingTable {
+    margin-bottom: 54px;
+    margin-top: 0px;
+}
+
+.transferBtnsT {
+    margin-left: 305px;
+}
+
+.trackingBtns {
+    margin-left: 152px;
+}
+
+.submitBtn {
+    background-color: #43444D !important;
+    color: white;
+    width: 115px;
+}
+
+.cancelBtn {
+    width: 115px;
+    margin-top: 22px;
+}
+
+    .cancelBtn:hover {
+        color: black;
+        background-color: white;
+    }
+
+
+.submitTransfer {
+    background-color: #43444D;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 85px;
+    margin-bottom: 24px;
+    margin-top: 20px;
+}
+
+
+.cancelTransfer {
+    background-color: white;
+    border: 1px solid #43444D;
+    color: #43444D;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 14px;
+    margin-bottom: 24px;
+    margin-top: 20px;
+}
+
+    .cancelTransfer:hover {
+        color: #43444D;
+        background-color: white;
+    }
+
+
+/*Patient image*/
+.thumb-image {
+    float: left;
+    width: 500px;
+    position: relative;
+    padding: 5px;
+}
+
+/*Transfers page table space*/
+.tableSpace {
+    background-color: #EEEFE9;
+    padding: 5px !important;
+    border: none !important;
+}
+
+
+#AddNewHospital {
+    width: 595px;
+}
+
+#AddHospitalPhoneExtension {
+    width: 595px;
+}
+
+.table thead th {
+    vertical-align: middle;
+}
+
+.transferSearch a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.transferSearch .search-container {
+    float: right;
+    margin-left: 40px;
+}
+
+.transferSearch input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    margin-top: 15px;
+    margin-right: 10px;
+    float: right;
+    width: 368px;
+}
+
+#userInput {
+    float: right;
+}
+
+
+.transferSearch .search-container button:hover {
+    background: #ccc;
+}
+
+.transferData {
+    padding-top: 0px !important;
+    padding-left: 491px;
+}
+
+.transferTable {
+    padding-top: 0px !important;
+    /*padding-left: 507px;*/
+}
+
+.transferContainer {
+    padding-top: 20px;
+    margin-left: 90px;
+}
+
+.tableTransfer {
+    background-color: white;
+    /*margin-left: -15px;*/
+    margin-left: 0px;
+    width: 402px;
+    max-width: 402px;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: white;
+}
+
+
+/*Reason DropDown*/
+.bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:active {
+    color: black !important;
+    background-color: white;
+    border: 1px solid #ced4da;
+}
+
+.btn-check:focus + .btn-light, .btn-light:focus, .btn-light:hover {
+    background-color: white !important;
+}
+
+.btn-light {
+    color: #000;
+    background-color: white;
+    border: 1px solid #ced4da;
+}
+
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+/*Transfer tab link colors*/
+.nav-link {
+    color: #B2C4CF !important;
+}
+
+    .nav-link:focus, .nav-link:hover {
+        color: #B2C4CF !important;
+    }
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #495057 !important;
+}
+
+.dropdowns {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    -moz-padding-start: calc(0.75rem - 3px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.hide {
+    display: none;
+}
+
+
+.cancelHospitalBtn {
+    background-color: white;
+    border: 1px solid #43444D;
+    color: black;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+    .cancelHospitalBtn:hover {
+        color: black;
+    }
+
+
+.dataTables_wrapper .dataTables_filter {
+    /*float: right;*/
+    text-align: right;
+    margin-top: -57px;
+    margin-left: 100px !important;
+    color: white !important;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    background-color: white;
+    width: 60px;
+}
+
+#tableCert_wrapper {
+    width: 120%;
+}
+
+
+/*******************Triage Buttons**************************/
+.triageBtn {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    -webkit-transition: width 1s;
+    transition: width 1s;
+    white-space: nowrap;
+    border-radius: 50px;
+    position: relative;
+    top: -3px;
+    border: white;
+    padding: 0px;
+}
+
+    .triageBtn#green {
+        padding: 0px;
+        width: 80px;
+        -webkit-transition: width 1s;
+        transition: width 1s;
+        content: 'Low';
+    }
+
+    .triageBtn#yellow {
+        padding: 0px;
+        width: 80px;
+        -webkit-transition: width 1s;
+        transition: width 1s;
+        content: 'Medium';
+    }
+
+    .triageBtn#red {
+        content: 'High';
+        padding: 0px;
+        width: 80px;
+        -webkit-transition: width 1s;
+        transition: width 1s;
+    }
+
+.hidden {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+}
+
+.TriageCloseLowHigh {
+    margin-top: -28px;
+    opacity: 0.3;
+    margin-left: 60px;
+}
+
+.TriageCloseMedium {
+    margin-top: -28px;
+    opacity: 0.3;
+    margin-left: 66px;
+}
+
+.close {
+    float: left;
+}
+
+.btn .btn-text {
+    max-width: 0;
+    display: inline-block;
+    -webkit-transition: color .25s 1.5s, max-width 2s;
+    transition: color .25s 1.5s, max-width 2s;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    color: white;
+    padding: 0px;
+    width: 80px;
+}
+
+.btn:hover .btn-text,
+.btn:focus .btn-text {
+    max-width: 300px;
+    color: white;
+}
+
+
+
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/**********************SMALL SCREEN*******************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+
+@media only screen and (max-width: 1300px) {
+
+    .tableMargin {
+        margin-left: -28px;
+    }
+
+
+    /******DataTable height********/
+    .dataTables_scrollBody {
+        height: 283px;
+        width: 100% !important;
+    }
+
+    /*Search bar*/
+    .homepageSearch {
+        overflow: hidden;
+        background-color: #43444D;
+        width: 92.6%;
+        margin-left: 70px;
+        height: 70px;
+        margin-bottom: -6px;
+    }
+
+    .transferPage {
+        margin-left: -32px !important;
+        width: 103% !important;
+    }
+
+    .containerTracking {
+        margin-left: 242px;
+    }
+
+
+    containerTransfer {
+        margin-left: 69px;
+    }
+
+    .containerAdmin {
+        padding-right: 15px;
+        /*padding-left: 0px;*/
+        margin-right: auto;
+        margin-left: -253px;
+        width: 129%;
+    }
+
+    .headTitle {
+        padding-bottom: 19px !important;
+    }
+
+    .medTitle {
+        margin-left: 40% !important;
+    }
+
+    /*Small*/
+    .row1 {
+        margin-left: -6px;
+    }
+
+    .row2 {
+        margin-left: 32.5%;
+        margin-top: -33%;
+    }
+
+
+    .row3 {
+        margin-left: 68%;
+        margin-top: -41%;
+    }
+
+    .transferRow2 {
+        margin-top: -30%;
+        margin-left: 55%;
+    }
+
+
+    .verticalTracking {
+        border-left: 2px solid #C8C9CA;
+        height: 523px;
+        margin-top: -25px;
+        position: absolute;
+        left: 32.5%;
+        margin-right: 15px;
+        width: 5px;
+    }
+
+    .verticalTracking2 {
+        border-left: 2px solid #C8C9CA;
+        height: 523px;
+        margin-top: -25px;
+        position: absolute;
+        left: 65.5%;
+        margin-right: 15px;
+        width: 5px;
+    }
+
+    .verticalTransfer {
+        border-left: 2px solid #C8C9CA;
+        height: 481px;
+        margin-top: -25px;
+        position: absolute;
+        left: 47%;
+        margin-right: 15px;
+        width: 5px;
+    }
+
+
+    .lineTracking1 {
+        margin-left: 11px;
+        width: 312px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    .lineTracking2 {
+        margin-left: 11px;
+        width: 312px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    .lineTransfer {
+        margin-left: 75px;
+        width: 406px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+
+
+    label {
+        font-size: 14px !important;
+        /*text-align: right;*/
+    }
+
+
+
+
+
+    #commentsTracking {
+        float: right;
+        width: 373px;
+    }
+
+    #commentsTransfer {
+        float: right;
+        width: 532px;
+        margin-top: 15px;
+    }
+
+
+
+    .certStatus {
+        margin-top: 22px;
+    }
+
+
+
+    .medTitle {
+        color: white;
+        font-size: 40px;
+        display: block;
+        margin-left: 852px;
+        margin-top: 13px;
+        padding-bottom: 12px;
+    }
+
+
+
+
+    .patientTabs {
+        background-color: white;
+        margin-left: 23px;
+        margin-right: 23px;
+    }
+
+
+
+
+
+    .hospBtns {
+        margin-left: 68px !important;
+        margin-top: 33px;
+    }
+
+    .hospTitle {
+        margin-left: 39%;
+        font-weight: normal;
+        font-size: 30px;
+        width: 100%;
+    }
+
+
+
+
+
+    .addAcct {
+        margin-left: 65% !important;
+        padding-top: 30px;
+        background-color: white;
+        width: 700px;
+    }
+
+
+    .addPatientBtn {
+        width: 131px;
+        margin-top: 17px;
+        margin-left: 43%;
+    }
+
+        .addPatientBtn:hover {
+            color: black;
+            background-color: white;
+        }
+
+    #AddNewHospitalPhone {
+        width: 595px;
+        margin-left: 51px;
+    }
+
+
+    /*Search bar*/
+    .transferSearch {
+        overflow: hidden;
+        background-color: #43444D;
+        width: 94.8%;
+        margin-left: 74px;
+    }
+
+
+    .fullName {
+        border: none;
+        font-size: 27px;
+        margin-left: 43%;
+        width: 56%;
+        margin-bottom: 33px
+    }
+
+    .fullNameInfo {
+        border: none;
+        font-size: 27px;
+        margin-left: 28%;
+        width: 56%;
+        margin-bottom: 49px
+    }
+
+
+
+    .infobar {
+        margin-left: -11px;
+        margin-bottom: 16px;
+        margin-top: 39px !important;
+    }
+
+
+
+
+    .bootstrap-select {
+        /*width: 193px;*/
+        width: 100%;
+    }
+
+    .reasonDrop {
+        /*margin-left: 78px !important;*/
+        width: 217px !important;
+    }
+
+
+
+    .trackingPartialBtn {
+        float: right;
+        margin: 35px 68px -51px 0px;
+    }
+
+    .transferPartialBtn {
+        float: right;
+        margin: 35px 131px -51px 0px;
+    }
+
+
+
+    #guardianCheck {
+        float: none;
+    }
+
+    .Track_Reason .select2-container--default .select2-selection--multiple {
+        width: 192px;
+    }
+
+    .select2-container--default .select2-selection--multiple {
+        width: 261px;
+    }
+
+
+    .hospName {
+        width: 231px !important;
+    }
+
+
+
+
+
+    /*New Hospital columns*/
+    .newHospRow1 {
+    }
+
+    .verticalNewHosp {
+        border-left: 2px solid #C8C9CA;
+        height: 420px;
+        margin-top: 3px;
+        position: absolute;
+        left: 48%;
+        margin-right: 15px;
+        width: 5px;
+    }
+
+
+
+    .currentHospTitle {
+        margin-left: 39%;
+    }
+
+    .newHospTitle {
+        margin-left: 13%;
+    }
+
+    .newHospitalHR {
+        width: 47%;
+        margin-left: 36px;
+        margin-bottom: 45px;
+    }
+
+    .currentHospitalHR {
+        width: 60%;
+        margin-left: 151px;
+        margin-bottom: 19px;
+    }
+
+    .hospTitleCurrent {
+        margin-left: 38%;
+        font-weight: normal;
+        font-size: 30px;
+        width: 100%;
+    }
+
+    .hospTitleNew {
+        margin-left: 15%;
+        font-weight: normal;
+        font-size: 30px;
+        width: 100%;
+    }
+
+    #AddNewHospital2 {
+        width: 595px;
+        margin-left: -21%;
+    }
+
+    /*Current Hospital Table*/
+    .results tr[visible='false'],
+    .no-result {
+        display: none;
+    }
+
+    .results tr[visible='true'] {
+        display: table-row;
+    }
+    
+    .counter {
+        padding: 4px;
+        color: black;
+    }
+
+    .searchBar {
+        margin-bottom: -6%;
+        margin-left: -162%;
+        width: 216%;
+    }
+
+
+
+    .addPatient {
+        width: 130px;
+        margin-left: 35%;
+        margin-top: 1.5%;
+    }
+
+    .addHospital {
+        width: 154px;
+        margin-left: 1%;
+        margin-top: 1.5%;
+    }
+
+   
+    .nav-tabs {
+        font-size: 18px;
+    }
+
+
+    /*DropDown height*/
+    selectpicker {
+        height: 95%;
+    }
+
+    #Patient_Ethnicity {
+        height: 95%;
+    }
+
+    #Patient_EmergencyContactRelationship {
+        height: 95%;
+    }
+
+    #Patient_GuardianRelationship {
+        height: 95%;
+    }
+
+
+
+    [data-id="Patient_Ethnicity"] {
+        height: 32px !important;
+    }
+
+    [data-id="Patient_EmergencyContactRelationship"] {
+        height: 32px !important;
+    }
+
+    [data-id="Patient_Race"] {
+        height: 32px !important;
+    }
+
+    [data-id="Patient_GuardianRelationship"] {
+        height: 32px;
+    }
+
+    [data-id="Track_ArrivalMode"] {
+        height: 32px;
+    }
+
+    [data-id="Track_ArrivalType"] {
+        height: 32px;
+    }
+
+    [data-id="Track_ChiefComplaint"] {
+        height: 32px;
+    }
+
+    [data-id="Assessment_Room"] {
+        height: 32px;
+    }
+
+    [data-id="Track_DispositionType"] {
+        height: 32px;
+    }
+
+    [data-id="Track_DepartureMode"] {
+        height: 32px;
+    }
+
+
+    /*Pagination*/
+    div.dataTables_wrapper {
+        width: 203% !important;
+        margin: 0 auto;
+    }
+
+    .dataTables_wrapper .dataTables_filter {
+        float: right;
+        text-align: right;
+    }
+
+
+
+
+    /*Show Entries Filter*/
+    .dataTables_wrapper .dataTables_length {
+        float: left;
+        margin-left: 27%;
+        color: white;
+        margin-top: -60px;
+    }
+
+
+
+    .patientRow {
+        margin-left: 5.4%;
+    }
+
+
+
+    #PatientTable_filter {
+        color: white;
+        font-size: 16px;
+        position: relative;
+        display: inline-block;
+        /* background-color: #43444D; */
+        margin-right: 0%;
+        margin-top: -59px;
+    }
+
+    #tableTransfer_filter {
+        color: white;
+        font-size: 16px;
+        position: relative;
+        display: inline-block;
+        /* background-color: #43444D; */
+        margin-right: -3%;
+        margin-top: -68px;
+    }
+
+    .columnPatient .dataTables_scroll {
+        width: 102%;
+    }
+
+    .columnTransfer .dataTables_scroll {
+        width: 104.5%;
+    }
+
+    .dataTables_wrapper .dataTables_paginate {
+        float: right;
+        text-align: right;
+        padding-top: 0.25em;
+    }
+
+    #patientTable_paginate {
+        margin-left: 1px;
+    }
+
+    .columnTransfer {
+        float: left;
+        width: 48%;
+        padding: 5px;
+    }
+
+    .columnPatient {
+        float: left;
+        width: 48%;
+        padding: 5px;
+    }
+
+    .dataTables_wrapper.no-footer .dataTables_scrollBody {
+        border-bottom: none !important;
+    }
+
+    table.dataTable thead th, table.dataTable thead td {
+        padding: 10px 18px;
+        border-bottom: 0px;
+    }
+
+    /*Delete Patient = Admins*/
+    .deleteTransfer {
+        background-color: #EE3838;
+        border: 1px solid #EE3838;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        margin-left: 89%;
+        /* margin-bottom: 24px; */
+        margin-top: -46px;
+    }
+
+        .deleteTransfer:hover {
+            color: white;
+        }
+
+    .initArrival {
+       width: 50% !important;
+       margin-left: 45px !important;
+    }
+
+   
+
+}
+
+
+
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/***********************WIDE SCREEN*******************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+/*****************************************************************/
+
+@media only screen and (min-width: 1301px) {
+
+
+    .columnPatient .dataTables_scrollBody {
+        height: 638px!important;
+    }
+
+
+    /*Search bar*/
+    .homepageSearch {
+        overflow: hidden;
+        background-color: #43444D;
+        width: 89.3%;
+        margin-left: 74px;
+        height: 70px;
+        margin-bottom: -6px;
+    }
+
+
+
+
+    .TransferTable {
+        padding-left: 15px;
+    }
+
+    .containerTracking {
+        margin-left: 109px;
+    }
+
+
+    label {
+        font-size: 14px !important;
+        text-align: right;
+    }
+
+   .medTitle {
+        color: white;
+        font-size: 40px;
+        display: block;
+        margin-left: 852px;
+        margin-top: 13px;
+        padding-bottom: 12px;
+    }
+
+    .patientTabs {
+        background-color: white;
+        margin-left: 233px;
+        margin-right: 185px;
+        width: 81%;
+    }
+
+    .hospBtns {
+        margin-left: 83px;
+        margin-top: 33px;
+    }
+
+    .addAcct {
+        padding-top: 30px;
+        background-color: white;
+    }
+
+    .column {
+        float: left;
+        width: 50%;
+        padding: 5px;
+    }
+
+    #AddNewHospitalPhone {
+        width: 595px;
+    }
+
+    /*Current Hospital Table*/
+    .results tr[visible='false'],
+    .no-result {
+        display: none;
+    }
+
+    .results tr[visible='true'] {
+        display: table-row;
+    }
+
+    .counter {
+        padding: 8px;
+        color: #ccc;
+    }
+    
+    /*Search bar*/
+    .transferSearch {
+        overflow: hidden;
+        background-color: #43444D;
+        width: 93%;
+        margin-left: 74px;
+    }
+
+
+    .fullName {
+        border: none;
+        font-size: 27px;
+        margin-left: 24%;
+        width: 28%;
+        margin-bottom: 33px;
+    }
+
+    .preferredName {
+        border: none;
+        font-size: 22px;
+        margin-left: 24%;
+        width: 28%;
+        margin-bottom: 33px;
+    }
+
+
+    .guardianNameW {
+        margin-left: -274px !important;
+    }
+
+    .guardianPhoneW {
+        margin-left: -242px !important;
+    }
+
+    .relationshipW {
+        margin-left: -249px !important;
+    }
+
+    #guardRelationship .bootstrap-select {
+        width: 352px !important;
+    }
+            
+    .bootstrap-select {
+        width: 194px;
+    }
+
+    .reasonDrop {
+        /*margin-left: 78px !important;*/
+        width: 197px
+    }
+
+    .Track_Reason .select2-container--default .select2-selection--multiple {
+        width: 101%;
+        margin-left: 84px;
+    }
+
+    .select2-container--default .select2-selection--multiple {
+        width: 532px;
+    }
+
+    .infobar {
+        margin-top: 42px;
+        margin-left: -14px;
+        margin-bottom: 13px;
+    }
+
+    .addPatientBtn {
+        margin-top: 17px;
+        margin-left: 63%;
+    }
+
+    .patientFNameW {
+        margin-left: -271px !important;
+    }
+
+    .patientLNameW {
+        margin-left: -271px !important;
+    }
+
+    .patientPrefNameW {
+        margin-left: -239px !important;
+    }
+
+    .patientSexW {
+        margin-left: -81px !important;
+    }
+
+    .pronounsLabel {
+        text-align: left;
+        margin-left: -7px;
+    }
+
+
+    .patientDOBlabel {
+        margin-left: -113px !important;
+    }
+
+    .patientAgeLabel {
+        margin-left: -43px !important;
+    }
+
+    .patientEthnicity {
+        margin-left: -154px !important;
+    }
+
+    .emergName {
+        margin-left: -455px !important;
+    }
+
+    .emergPhone {
+        margin-left: -148px !important;
+    }
+
+    .guardName {
+        margin-left: -455px !important;
+    }
+
+    .guardPhone {
+        margin-left: -148px !important;
+    }
+
+    .guarRel {
+        margin-top: 42px;
+    }
+
+
+    .trackingPartialBtn {
+        margin-left: 35%;
+    }
+
+    .MSESCheckW {
+        width: 50%;
+        margin-left: 46px;
+    }
+   
+
+    .addPatient {
+        width: 130px;
+        margin-left: 40%;
+        margin-top: 1%;
+    }
+
+    .addHospital {
+        width: 154px;
+        margin-left: 1%;
+        margin-top: 1%;
+    }
+
+    .hospList {
+        margin-left: 26.4% !important;
+        overflow-y: scroll !important;
+        height: 26% !important;
+        width: 39.5% !important;
+    }
+
+
+
+    .hospSearching {
+        float: none !important;
+        margin-left: 33.7%;
+        width: 403px;
+    }
+
+
+    .hospTitleCurrent {
+        margin-left: 41%;
+    }
+
+    .currentHospitalHR {
+        width: 24%;
+        margin-left: 37%;
+    }
+
+    .newHospitalHR {
+        width: 24%;
+        margin-left: 10%;
+    }
+
+    .verticalNewHosp {
+        border-left: 2px solid #C8C9CA;
+        height: 557px;
+        margin-top: 3px;
+        position: absolute;
+        left: 48%;
+        margin-right: 15px;
+        width: 5px;
+    }
+
+    .h6, h6 {
+        font-size: 2rem;
+    }
+
+    .newHospRow2 {
+        margin-left: -14%;
+    }
+
+    #AddNewHospital2 {
+        margin-left: -6%;
+        width: 52%;
+    }
+
+    .hospTitleNew {
+        margin-left: 16%;
+    }
+
+    .hospBtns {
+        margin-left: 24%;
+    }
+
+    .nav-tabs {
+        font-size: 20px;
+    }
+
+
+    /*Show Entries Filter*/
+    .dataTables_wrapper .dataTables_length {
+        float: left;
+        margin-left: 73%;
+        color: white;
+        margin-top: -51px;
+    }
+
+
+    .patientRow {
+        width: 187.4%;
+        margin-left: 68px;
+        height: 90%;
+    }
+
+    .dataTables_scrollBody {
+        height: 86%;
+    }
+
+    .headTitle {
+        padding-bottom: 19px;
+    }
+
+    .dataTables_wrapper.no-footer .dataTables_scrollBody {
+        border-bottom: none !important;
+    }
+
+    table.dataTable thead th, table.dataTable thead td {
+        padding: 10px 18px;
+        border-bottom: 0px solid #111;
+    }
+
+    #PatientTable_filter {
+        color: white;
+        font-size: 16px;
+        position: relative;
+        display: inline-block;
+        /* background-color: #43444D; */
+        margin-right: 21px;
+        margin-top: -59px;
+    }
+
+    #tableTransfer_filter {
+        color: white;
+        font-size: 16px;
+        position: relative;
+        display: inline-block;
+        /* background-color: #43444D; */
+        margin-right: 1%;
+        margin-top: -59px;
+    }
+
+    .userLinks1 {
+        display: inline-block;
+        color: white;
+        font-size: 20px;
+        float: left;
+    }
+
+
+    .userLinks2 {
+        display: inline-block;
+        color: white;
+        font-size: 20px;
+        float: right;
+    }
+
+    /*Home, Transfers, Cert, Accounts & Reports buttons*/
+    .userBtn {
+        background-color: #43444D;
+        color: white;
+        border: none;
+    }
+       
+    .fullName {
+        margin-left: 46%;
+    }
+     
+    .ageWide {
+        margin-left: 82px;
+        margin-top: -26px !important;
+    }
+
+    
+    .lblDateTime {
+        text-align: left;
+        margin-left: 13px;
+    }
+
+    .SpaceData {
+        margin-bottom: 22px;
+    }
+
+    .hospBtns {
+        margin-left: 83px;
+        margin-top: 33px;
+    }
+
+    .addAcct {
+        padding-top: 30px;
+        background-color: white;
+    }    
+
+    .lineTracking {
+        width: 28% !important;
+        margin-left: 35% !important;
+    }
+
+    .select2 select2-container select2-container--default {
+        width: 30%;
+    }
+
+
+
+
+
+    /*TABLES*/
+    .column {
+        float: left;
+        width: 48%;
+        padding: 5px;
+    }
+
+
+    [data-id="Patient_Ethnicity"] {
+        height: 32px !important;
+    }
+
+    [data-id="Patient_EmergencyContactRelationship"] {
+        height: 32px !important;
+    }
+
+    [data-id="Patient_Race"] {
+        height: 32px !important;
+    }
+
+    [data-id="Patient_GuardianRelationship"] {
+        height: 32px;
+    }
+
+    [data-id="Track_ArrivalMode"] {
+        height: 32px;
+    }
+
+    [data-id="Track_ArrivalType"] {
+        height: 32px;
+    }
+
+    [data-id="Track_ChiefComplaint"] {
+        height: 32px;
+    }
+
+    [data-id="Assessment_Room"] {
+        height: 32px;
+    }
+
+    [data-id="Track_DispositionType"] {
+        height: 32px;
+    }
+
+    [data-id="Track_DepartureMode"] {
+        height: 32px;
+    }
+
+    .dataTables_scrollHead {
+        width: 104% !important;
+    }
+
+    .dataTables_wrapper.no-footer .dataTables_scrollBody {
+        border-bottom: none !important;
+        width: 104% !important;
+    }
+
+    table.dataTable thead th, table.dataTable thead td {
+        padding: 10px 18px;
+        border-bottom: 0px solid #111;
+    }
+
+
+
+
+    .guardRel {
+        margin-top: 40px!important;
+        width: 51%;
+    }
+
+
+
+    /********WIDE**********/
+    .row1 {
+        margin-left: 100px !important;
+    }
+
+    .row2 {
+        margin-left: 30% !important;
+        margin-top: -23% !important;
+    }
+
+    .col3WideS {
+        margin-left: 63% !important;
+        margin-top: -28% !important;
+    }
+
+    .transferRow2 {
+        margin-left: 57% !important;
+        margin-top: -23% !important;
+    }
+
+    /***************TRACKING TAB************************/
+
+
+    .datetimeField {
+        margin-left: 12px !important;
+        width: 216px !important;
+    }
+
+
+
+    /*Arrival Time*/
+    .arrivalType {
+        margin-left: -55.7% !important;
+    }
+
+    .arrivalWideS {
+        margin-left: 13% !important;
+    }
+
+
+    /*Reason*/
+    .Track_Reason {
+        margin-left: -32.6% !important;
+    }
+
+    .reasonSelect{
+        margin-left: -1px !important;
+    }
+
+    .select2-container {
+        width: 192px !important;
+    }
+
+
+    /*Arrival Mode*/
+        .modeWideS {
+        margin-left: -16.9% !important;
+    }
+
+    .arrivalModeS {
+        margin-left: 47px !important;
+    }
+
+
+    /*Arrival Type*/
+    .typeWideS {
+        margin-left: -18% !important;
+    }
+
+    .AtypeWideS {
+        margin-left: 53px !important;
+    }
+
+
+    /*Chief Complaint*/
+    .chiefWideScreen {
+        margin-left: 26px !important;
+    }
+
+    .chiefWideS {
+        margin-left: -72px;
+    }
+
+    /*Admission Type*/
+    .adminType {
+        margin-left: -10% !important;
+    }
+
+
+    /*Triage*/
+    .triageWide {
+        margin-left: -141px !important;
+    }
+
+    .triLW {
+        margin-left: 91px!important;
+    }
+
+
+    /*SBAR Called*/
+    .sbarWidth {
+        width: 471px !important;
+        margin-left: -67px !important;
+    }
+
+    .SBARcheckboxClick {
+        margin-left: 71px!important;
+    }
+
+    .sbarWideS {
+        margin-left: -146px !important;
+    }
+
+    #Track_SBARCall {
+        margin-left: 49px !important;
+    }
+
+    .sbarWide {
+        margin-left: 34px !important;
+        width: 49% !important;
+    }
+
+    .sbarDisp {
+        width: 189px !important;
+        margin-left: 18px !important;
+        /*text-align: right;*/
+    }
+
+    /*MSE Assessment Start*/
+    .MSESCheckWLabel {
+        margin-left: -21px !important;
+    }
+
+    .MSESWideS {
+        margin-left: -24px !important;
+    }
+
+    .mseSCheckW {
+        width: 255px !important;
+        margin-left: 23px !important;
+    }
+
+    .mseAssessS {
+        margin-left: -1px !important;
+        width: 248px !important;
+    }
+
+    .mseDisp {
+        width: 248px !important;
+        margin-left: -16px !important;
+    }
+
+    #lblMSEStartDateTime {
+        width: 248px !important;
+        margin-left: -15px !important;
+        margin-bottom: -2px;
+        /*text-align: right;*/
+    }
+
+    .mseStart {
+        /*text-align: right;*/
+    }
+
+
+
+    /*MSE Assessment End*/
+    .MSEEnd {
+        margin-left: 28px !important;
+    }
+
+
+    .MSESCheckW {
+        margin-left: 32px !important;
+    }
+
+    .MSEEWideS {
+        margin-left: 18px !important;
+    }
+
+    .mseEndW {
+        margin-left: 49% !important;
+        margin-top: -26px !important;
+    }
+
+    .mseEndWide {
+        width: 248px !important;
+    }
+
+    .EndWideS {
+        width: 54% !important;
+        margin-left: 8px !important;
+    }
+
+    .mseEndDisp {
+        margin-left: 16px !important;
+        width: 246px !important;
+        /*text-align: right;*/
+    }
+
+    /*Assessment Start*/
+    .assessStartW {
+        margin-left: -108px !important;
+    }
+
+    .assessmentStartW {
+        margin-left: 66px !important;
+        width: 252px !important;
+    }
+
+    .assessStart {
+        margin-left: -53px !important;
+    }
+
+    .assessSInput {
+        width: 96% !important;
+        margin-left: 38% !important;
+    }
+
+    .assessmentLabel {
+        margin-left: -53px !important;
+    }
+
+    .assessStartDisp {
+        width: 249px !important;
+        margin-left: -20px !important;
+        /*text-align: right;*/
+    }
+
+
+    /*Assessor*/
+    .assessorDropW {
+        margin-left: -102px !important;
+    }
+    
+    /*Assessment Room*/
+    .assessmentW {
+        margin-left: 1px !important;
+        width: 139% !important;
+    }
+
+    .assessWideS {
+        margin-left: 98px !important;
+        width: 41% !important;
+    }
+
+    .assessmentRLabel {
+        margin-left: -88px !important;
+    }
+
+    .assessmentDrop {
+        margin-left: 38px !important;
+        width: 58% !important;
+    }
+
+
+    /*Assessment End*/
+    .assessmentEndW {
+        margin-left: -13px !important
+    }
+
+    .assessEWide {
+        margin-top: 17px !important;
+        margin-left: -25px !important;
+    }
+
+    .assessMentE {
+        width: 78% !important;
+        margin-left: 53px !important;
+    }
+
+    #AssessEcheckboxClick {
+        margin-left: 67px !important;
+    }
+
+    .assessEndDisplay {
+        margin-left: 60px !important;
+        width: 248px !important;
+        /*text-align: right;*/
+    }
+
+
+    /*Emergency Medical Condition*/
+    .medWideS {
+        margin-left: -24px !important;
+    }
+
+    .emcWide {
+        margin-left: 130px !important;
+    }
+
+    /*Cert Status*/
+    .certStatW {
+        margin-left: 171px !important;
+    }
+
+    /*Arrival to Disposition*/
+    .arrivalDispLW {
+        width: 246px !important;
+    }
+
+    .dispW {
+        width: 230px !important;
+    }
+
+    .dispWide {
+        margin-left: 12px !important;
+    }
+
+    .arrDisp {
+        width: 196px !important;
+        margin-left: 10px !important;
+        /*text-align: right;*/
+    }
+
+    /*Disposition*/
+    .dispType {
+        margin-left: 71px !important;
+    }
+
+    .dispLW {
+        margin-left: 47px !important;
+    }
+
+    .dispAW {
+        width: 196px !important;
+    }
+
+
+    /*Patient Went to Unit*/
+    .patientUnitLW {
+        width: 246px !important;
+    }
+
+    .patientUnitW {
+        width: 231px !important;
+    }
+
+    .unitW {
+        margin-left: 12px !important;
+    }
+
+
+    .unitDisplay {
+        margin-left: 5px !important;
+    }
+
+    .patientDisp {
+        width: 195px !important;
+        margin-left: 11px !important;
+        /*text-align: right;*/
+    }
+
+
+    /*Departure Mode*/
+    .depModeLW {
+        margin-left: -7px !important;
+    }
+
+    .depModeW {
+        margin-left: 31px !important;
+    }
+
+    .departureModeW {
+        width: 196px !important;
+    }
+
+
+
+    /*Departure Time*/
+    .departTimeW {
+        width: 237px !important;
+        margin-left: 26px !important;
+    }
+
+    .deptTimeW {
+        margin-left: 24px !important;
+    }
+
+    .deptTimeWideLabel {
+        margin-left: -12px !important;
+    }
+
+    .deptWide {
+        margin-left: -26px !important;
+    }
+
+    .deptTimeDisp {
+        width: 195px !important;
+        margin-left: 12px !important;
+        /*text-align: right;*/
+    }
+
+
+    /*Comments*/
+    .commentsWideS {
+        margin-left: 105px !important;
+    }
+
+    .commentsW {
+        width: 87% !important;
+    }
+
+
+    /***************TRANSFERS TAB************************/
+    /*Received Referral*/
+    .referralLabelW {
+        margin-left: -147px !important;
+    }
+
+    .referralTimeW {
+        width: 36%;
+        margin-left: 134px !important;
+    }
+
+
+
+    /*Hospital Name*/
+    .hospNameLW {
+        margin-left: -109px !important;
+    }
+
+    .hospNameDropW {
+        margin-left: 110px !important;
+        width: 41.2% !important;
+    }
+
+    /*Hospital Phone Number*/
+    .hospPhoneLW {
+        margin-left: -103px !important;
+    }
+
+    .hospPhoneW {
+        width: 41% !important;
+        margin-left: 53px !important;
+    }
+    /*Hospital Extension Number*/
+    .hospExLW {
+        margin-left: -83px !important;
+    }
+
+    .hospExW {
+        width: 41% !important;
+        margin-left: 34px !important;
+    }
+    
+    
+    /*Hospital Fax Number*/
+    .hospFaxLW {
+        margin-left: -121px !important;
+    }
+
+    .hospFaxW {
+        margin-left: 72px !important;
+        width: 41% !important;
+    }
+
+    /*Transfer Status*/
+    .statusLW {
+        margin-left: -165px !important;
+    }
+
+    .statusW {
+        margin-left: 155px !important;
+    }
+
+    .statusDrop {
+        margin-left: -45px !important;
+        width: 230px !important;
+    }
+
+
+    /*Fax Received*/
+    .faxCheckLW {
+        margin-left: -220px !important;
+    }
+
+    .faxCheckW {
+        margin-left: 190px !important;
+    }
+
+
+    .faxLabel {
+        margin-left: -215px !important;
+    }
+
+    .faxTime {
+        margin-left: 190px !important;
+    }
+
+
+
+
+    /*Time Notified of Acceptance*/
+    .notifCheckLW {
+        margin-left: -122px !important;
+    }
+
+    .notifCheckW {
+        margin-left: 91px !important;
+    }
+
+    .notifLabel {
+        margin-left: -119px !important;
+    }
+
+    .notifTime {
+        margin-left: 94px !important;
+    }
+
+
+    /*Follow Up Complete*/
+    .followCheckWL {
+        margin-left: -170px !important;
+    }
+
+    .followCheckW {
+        margin-left: 140px !important;
+    }
+
+    .followLabel {
+        margin-left: -167px !important;
+    }
+
+    .followTime {
+        margin-left: 142px !important;
+    }
+
+
+
+    /*Arrival Time*/
+    .arrivalCheckLW {
+        margin-left: -169px !important;
+    }
+
+    .arrivalCheckW {
+        width: 57.6% !important;
+        margin-left: 53px !important;
+    }
+
+    .arrivalLabel {
+        margin-left: -221px !important;
+    }
+
+    .arrivalTime {
+        margin-left: 196px !important;
+    }
+    .initArrival {
+        width: 50% !important;
+        margin-left: 192px !important;
+    }
+
+    /*Comments*/
+    .commentsLW {
+        margin-left: -17px !important;
+    }
+
+
+    /*Vertical Lines*/
+    .verticalTracking {
+        border-left: 2px solid #C8C9CA;
+        height: 573px;
+        margin-top: -25px;
+        position: absolute;
+        left: 35%;
+        margin-right: 15px;
+        width: 5px;
+    }
+
+    .verticalTracking2 {
+        border-left: 2px solid #C8C9CA;
+        height: 573px;
+        margin-top: -25px;
+        position: absolute;
+        left: 65.5%;
+        margin-right: 15px;
+        width: 5px;
+    }
+
+    .verticalTransfer {
+        border-left: 2px solid #C8C9CA;
+        height: 402px;
+        margin-top: -25px;
+        position: absolute;
+        left: 47%;
+        margin-right: 15px;
+        width: 5px;
+    }
+
+
+    .lineTracking1 {
+        margin-left: 100px;
+        width: 441px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    .lineTracking2 {
+        margin-left: 100px;
+        width: 375px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+
+    /*Delete Patient = Admins*/
+    .deleteTransfer {
+        background-color: #EE3838;
+        border: 1px solid #EE3838;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        margin-left: 91%;
+        /* margin-bottom: 24px; */
+        margin-top: -47px;
+    }
+
+    .deleteTransfer:hover{
+        color:white;
+    }
+
+    .counter {
+        padding: 4px;
+        color: black;
+    }
+    
+}

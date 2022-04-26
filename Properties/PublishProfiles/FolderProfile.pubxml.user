@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>H:\MedTimers\MedTimers\MedTimers\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <History>True|2022-02-16T19:22:27.3278135Z;True|2022-02-16T13:08:30.5794501-06:00;True|2022-02-16T11:09:13.5696280-06:00;True|2022-02-16T11:01:13.3978360-06:00;True|2022-02-16T09:49:38.9590560-06:00;True|2022-02-16T09:46:26.8958946-06:00;True|2022-02-16T09:10:25.5937533-06:00;True|2022-02-16T09:04:32.7625846-06:00;True|2022-02-16T08:47:17.0263825-06:00;True|2022-02-16T08:32:31.9218328-06:00;True|2022-02-15T14:45:35.8541759-06:00;True|2022-02-15T12:22:35.7301892-06:00;True|2021-06-09T11:35:52.3453330-05:00;</History>
+  </PropertyGroup>
+</Project>
